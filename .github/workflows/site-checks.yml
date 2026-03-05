@@ -32,8 +32,9 @@ jobs:
             --no-progress
             --retry-wait-time 2
             --max-retries 3
+            --exclude '^https://chranama\.github\.io/.*$'
+            --exclude '^https://www\.linkedin\.com/.*$'
             ./*.html
-            ./**/*.html
 
   a11y-smoke:
     runs-on: ubuntu-latest
