@@ -1,0 +1,67 @@
+name: site-checks
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+jobs:
+  validate-html:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate HTML files
+        uses: Cyb3r-Jak3/html5validator-action@v7.2.0
+        with:
+          root: .
+          css: true
+
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Link check
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --verbose
+            --no-progress
+            --retry-wait-time 2
+            --max-retries 3
+            --exclude-mail
+            ./*.html
+            ./**/*.html
+
+  a11y-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Install pa11y-ci
+        run: npm install -g pa11y-ci http-server
+
+      - name: Start local static server
+        run: |
+          http-server . -p 8080 &
+          echo $! > server.pid
+
+      - name: Run accessibility smoke checks
+        run: |
+          pa11y-ci --config .pa11yci.json
+
+      - name: Stop local static server
+        if: always()
+        run: kill $(cat server.pid)
