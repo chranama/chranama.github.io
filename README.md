@@ -7,6 +7,7 @@ Static GitHub Pages portfolio site.
 - `/` -> recruiter landing page
 - `/case-study-extract-gating.html` -> LLM Extraction Platform case study
 - `/resume.pdf` -> resume download
+- `/masters_thesis.pdf` -> thesis download
 
 ## Local Files
 
@@ -20,11 +21,12 @@ Static GitHub Pages portfolio site.
 ## Launch checklist
 
 1. Replace `resume.pdf` with your final version.
-2. Confirm hero/contact links in `index.html` are exact.
-3. Push to `main`.
-4. In GitHub repo settings, enable Pages from `main` / root.
-5. Verify live site at `https://chranama.github.io`.
-6. Confirm Actions workflow `site-checks` passes.
+2. Ensure `masters_thesis.pdf` is present and current.
+3. Confirm hero/contact links in `index.html` are exact.
+4. Push to `main`.
+5. In GitHub repo settings, enable Pages from `main` / root.
+6. Verify live site at `https://chranama.github.io`.
+7. Confirm Actions workflow `site-checks` passes.
 
 ## Manual verification checklist
 
