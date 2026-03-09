@@ -221,7 +221,7 @@
 
     <footer class="site-footer">
       <div class="container footer-row">
-        <p>Last updated: <time data-last-updated></time></p>
+        <p>Last updated: <span data-last-updated></span></p>
         <p>
           <a href="proof-portfolio.html">Proof Portfolio</a>
           <span aria-hidden="true">|</span>
@@ -249,7 +249,6 @@
         }).format(modified);
         items.forEach(function (item) {
           item.textContent = formatted;
-          item.setAttribute('datetime', modified.toISOString());
         });
       })();
     </script>

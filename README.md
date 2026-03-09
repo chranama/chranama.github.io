@@ -51,7 +51,7 @@ Static GitHub Pages portfolio site.
 - Core pages render and are readable on mobile and desktop.
 - Keyboard tab order and focus rings are visible.
 - Project and proof links resolve without searching.
-- Footer "Last updated" is auto-rendered from page `document.lastModified`.
+- Footer "Last updated" is auto-rendered from page `document.lastModified` into `[data-last-updated]`.
 - OG metadata points to non-placeholder social preview images.
 
 ## Private artifacts
