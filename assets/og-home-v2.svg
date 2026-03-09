@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="627" viewBox="0 0 1200 627" role="img" aria-label="AI Engineer Backend Platform Portfolio">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="627" fill="url(#bg)"/>
+  <rect x="60" y="64" width="1080" height="499" rx="24" fill="#111827" stroke="#334155" stroke-width="2"/>
+
+  <text x="100" y="140" fill="#93c5fd" font-family="Arial, Helvetica, sans-serif" font-size="32">Christopher Anaya</text>
+
+  <text x="100" y="205" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700">AI Engineer</text>
+  <text x="100" y="255" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700">Backend/Platform, LLM Systems</text>
+
+  <text x="100" y="320" fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="28">Production APIs | Model reliability | Testing and observability</text>
+
+  <text x="100" y="390" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700">Flagship: LLM Extraction Platform</text>
+  <text x="100" y="440" fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="26">Support: BioLLM robustness + Climate ML pipeline</text>
+
+  <text x="100" y="515" fill="#93c5fd" font-family="Arial, Helvetica, sans-serif" font-size="26">5-minute reviewer path: chranama.github.io</text>
+</svg>

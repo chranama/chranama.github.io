@@ -26,7 +26,7 @@ Static GitHub Pages portfolio site.
 - `recruiter-brief.html`
 - `css/styles.css`
 - `assets/favicon.svg`
-- `assets/og-home.svg`
+- `assets/og-home-v2.svg`
 - `assets/og-extract-gate.svg`
 - `assets/og-biollm.svg`
 - `assets/og-climate.svg`
