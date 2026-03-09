@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="627" viewBox="0 0 1200 627" role="img" aria-label="Extract Capability Gating Case Study">
+  <rect width="1200" height="627" fill="#0b1020"/>
+  <rect x="64" y="72" width="1072" height="483" rx="24" fill="#101a33" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="100" y="170" fill="#60a5fa" font-family="Arial, Helvetica, sans-serif" font-size="34">Case Study</text>
+  <text x="100" y="240" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="700">LLM Extraction Platform</text>
+  <text x="100" y="305" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700">Extract Capability Gating</text>
+  <text x="100" y="380" fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="30">Offline onboarding artifacts + runtime policy checks</text>
+  <text x="100" y="430" fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="30">Proof: deterministic PASS/FAIL evidence manifests</text>
+  <text x="100" y="500" fill="#93c5fd" font-family="Arial, Helvetica, sans-serif" font-size="28">Fast reviewer path in under 10 minutes</text>
+</svg>

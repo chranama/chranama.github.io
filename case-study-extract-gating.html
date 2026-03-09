@@ -3,17 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Case Study | Extract Gating in LLM Extraction Platform</title>
-    <meta name="description" content="Case study on extract capability gating, verification workflow, and evidence artifacts in the LLM Extraction Platform.">
+    <title>Case Study | Extract Capability Gating (LLM Extraction Platform)</title>
+    <meta name="description" content="How eval artifacts and runtime policy gates prevent unsupported extraction behavior in a production-style LLM API system.">
     <link rel="canonical" href="https://chranama.github.io/case-study-extract-gating.html">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Case Study: Extract Gating in LLM Extraction Platform">
-    <meta property="og:description" content="How offline onboarding artifacts and runtime policy gates prevent unsupported extraction behavior.">
+    <meta property="og:title" content="Case Study: Extract Capability Gating in LLM Extraction Platform">
+    <meta property="og:description" content="Offline onboarding evidence toggles runtime extraction capability, verified by deterministic PASS/FAIL artifacts.">
     <meta property="og:url" content="https://chranama.github.io/case-study-extract-gating.html">
-    <meta property="og:image" content="assets/favicon.svg">
+    <meta property="og:image" content="https://chranama.github.io/assets/og-extract-gate.svg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Case Study: Extract Gating in LLM Extraction Platform">
+    <meta name="twitter:title" content="Case Study: Extract Capability Gating in LLM Extraction Platform">
     <meta name="twitter:description" content="Evidence-first walkthrough of policy-gated extraction behavior.">
+    <meta name="twitter:image" content="https://chranama.github.io/assets/og-extract-gate.svg">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/styles.css">
   </head>
@@ -21,12 +22,12 @@
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
       <div class="container">
-        <p class="kicker">Case Study</p>
+        <p class="kicker">Flagship Case Study</p>
         <h1>Extract Capability Gating</h1>
         <p class="title">LLM Extraction Platform</p>
         <p>
-          This case study shows how model capability onboarding and runtime policy enforcement prevent
-          unsupported extraction behavior and produce reviewer-friendly evidence artifacts.
+          This case study shows how model capability onboarding and runtime policy enforcement prevent unsupported
+          extraction behavior and produce reviewer-friendly evidence artifacts.
         </p>
         <p><a class="button" href="index.html">Back to Portfolio</a></p>
       </div>
@@ -39,10 +40,7 @@
           <div class="card">
             <p>
               Extraction endpoints can appear to work even when a model is not properly onboarded for schema-constrained output.
-              That creates silent reliability risk: invalid structures, brittle outputs, and unclear operator confidence.
-            </p>
-            <p>
-              The platform treats this as a policy and capability problem, not just a prompt-engineering problem.
+              This introduces reliability risk: invalid output structure, brittle behavior, and unclear operator confidence.
             </p>
           </div>
         </div>
@@ -53,9 +51,9 @@
           <h2 id="approach-title">Approach</h2>
           <div class="card">
             <ul>
-              <li>Offline evaluation/onboarding artifacts set model capability in patched model manifests.</li>
+              <li>Offline onboarding/evaluation artifacts set extraction capability in patched model manifests.</li>
               <li>Runtime policy checks capability before serving extraction requests.</li>
-              <li>Demo scripts execute PASS/FAIL flows and write deterministic evidence manifests.</li>
+              <li>Demo scripts execute PASS and FAIL flows and write deterministic evidence manifests.</li>
             </ul>
             <p class="inline-links">
               <a href="https://github.com/chranama/llm-extraction-platform/blob/main/docs/02-project-demos.md">Project demos</a>
@@ -68,51 +66,29 @@
         </div>
       </section>
 
-      <section class="section" aria-labelledby="architecture-title">
+      <section class="section" aria-labelledby="proof-title">
         <div class="container">
-          <h2 id="architecture-title">Architecture and Flow</h2>
+          <h2 id="proof-title">Proof Artifacts</h2>
           <div class="card">
-            <ol>
-              <li>Run extract-gate demo script: <code>scripts/demo_extract_gate/run_host_transformers.sh</code>.</li>
-              <li>Script executes a host deployment scenario with supported and unsupported model capability paths.</li>
-              <li>Server enforcement allows extraction only when onboarding capability is present.</li>
-              <li>Artifacts are written to <code>traffic_out/&lt;run&gt;/</code> including PASS/FAIL runtime outputs and manifest.</li>
-            </ol>
-            <p>Optional architecture visual can be added later at <code>assets/architecture.png</code>.</p>
+            <ul>
+              <li><code>traffic_out/&lt;run&gt;/evidence_manifest.json</code></li>
+              <li><code>traffic_out/&lt;run&gt;/host_pass_runtime.json</code></li>
+              <li><code>traffic_out/&lt;run&gt;/host_fail_runtime.json</code></li>
+            </ul>
           </div>
         </div>
       </section>
 
       <section class="section" aria-labelledby="verification-title">
         <div class="container">
-          <h2 id="verification-title">Verification Steps</h2>
+          <h2 id="verification-title">5-10 Minute Reviewer Path</h2>
           <div class="card">
-            <h3>How a reviewer verifies this in under 10 minutes</h3>
             <ol>
-              <li>Open the <a href="https://github.com/chranama/llm-extraction-platform#10-minute-reviewer-path">reviewer path</a>.</li>
-              <li>Run <a href="https://github.com/chranama/llm-extraction-platform/blob/main/README.md#demo-2-extract-gate">Demo 2: Extract Gate</a>.</li>
-              <li>Inspect these outputs:
-                <ul>
-                  <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/docs/02-project-demos.md#demo-2-extract-gate">`traffic_out/&lt;run&gt;/evidence_manifest.json` (path reference)</a></li>
-                  <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/README.md#10-minute-reviewer-path">`traffic_out/&lt;run&gt;/host_pass_runtime.json` (review flow)</a></li>
-                  <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/README.md#10-minute-reviewer-path">`traffic_out/&lt;run&gt;/host_fail_runtime.json` (review flow)</a></li>
-                </ul>
-              </li>
+              <li>Open <a href="https://github.com/chranama/llm-extraction-platform#10-minute-reviewer-path">the reviewer path</a>.</li>
+              <li>Run <code>scripts/demo_extract_gate/run_host_transformers.sh</code>.</li>
+              <li>Inspect generated PASS/FAIL artifacts and evidence manifest.</li>
             </ol>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" aria-labelledby="artifacts-title">
-        <div class="container">
-          <h2 id="artifacts-title">Artifacts and Signals</h2>
-          <div class="card">
-            <ul>
-              <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/.github/workflows/ci.yml">Platform CI workflow</a></li>
-              <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/docs/00-testing.md">Testing strategy</a></li>
-              <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/docs/01-extraction-contract.md">Extraction contract docs</a></li>
-              <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/docs/03-deployment-modes.md">Deployment modes</a></li>
-            </ul>
+            <p><strong>Last verified:</strong> March 6, 2026</p>
           </div>
         </div>
       </section>
@@ -120,11 +96,11 @@
 
     <footer class="site-footer">
       <div class="container footer-row">
-        <p>Last updated: March 5, 2026</p>
+        <p>Last updated: March 6, 2026</p>
         <p>
           <a href="index.html">Home</a>
           <span aria-hidden="true">|</span>
-          <a href="https://github.com/chranama/llm-extraction-platform">Project Repo</a>
+          <a href="proof-portfolio.html">Proof Portfolio</a>
         </p>
       </div>
     </footer>

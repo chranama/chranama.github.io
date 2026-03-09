@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Proof Portfolio | Christopher Anaya</title>
+    <meta name="description" content="Central proof index with reviewer commands, artifact paths, and CI/test references across all portfolio projects.">
+    <link rel="canonical" href="https://chranama.github.io/proof-portfolio.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Proof Portfolio | Christopher Anaya">
+    <meta property="og:description" content="Reviewer-fast artifact and command index for flagship and supporting projects.">
+    <meta property="og:url" content="https://chranama.github.io/proof-portfolio.html">
+    <meta property="og:image" content="https://chranama.github.io/assets/og-home.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Proof Portfolio | Christopher Anaya">
+    <meta name="twitter:description" content="Commands and artifact links for a fast technical review.">
+    <meta name="twitter:image" content="https://chranama.github.io/assets/og-home.svg">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <div class="container">
+        <p class="kicker">Proof Portfolio</p>
+        <h1>Reviewer Commands and Artifacts</h1>
+        <p class="title">5-minute fast paths across all portfolio projects</p>
+        <p><a class="button" href="index.html">Back to Portfolio</a></p>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="section" aria-labelledby="llm-proof-title">
+        <div class="container">
+          <h2 id="llm-proof-title">LLM Extraction Platform (Flagship)</h2>
+          <div class="card">
+            <p><strong>Quick command:</strong> <code>scripts/demo_extract_gate/run_host_transformers.sh</code></p>
+            <p><strong>Evidence outputs:</strong> <code>traffic_out/&lt;run&gt;/evidence_manifest.json</code>, <code>host_pass_runtime.json</code>, <code>host_fail_runtime.json</code></p>
+            <ul>
+              <li><a href="https://github.com/chranama/llm-extraction-platform#10-minute-reviewer-path">Reviewer path</a></li>
+              <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/docs/02-project-demos.md">Demo docs</a></li>
+              <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/.github/workflows/ci.yml">CI workflow</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="biollm-proof-title">
+        <div class="container">
+          <h2 id="biollm-proof-title">BioLLM-Finetune (Support Proof)</h2>
+          <div class="card">
+            <p><strong>Quick commands:</strong> <code>python -m venv .venv</code>, <code>pip install -e .</code>, run tiny config from README.</p>
+            <p><strong>Evidence outputs:</strong> <code>results/phase4/summary.json</code>, <code>results/phase4/analysis/phase4_findings.md</code></p>
+            <ul>
+              <li><a href="https://github.com/chranama/biollm-finetune#5-minute-reviewer-path">5-minute reviewer path</a></li>
+              <li><a href="https://github.com/chranama/biollm-finetune/blob/main/results/phase4/analysis/phase4_findings.md">Findings</a></li>
+              <li><a href="https://github.com/chranama/biollm-finetune/blob/main/results/phase4/report_artifacts/tables/perturbation_ranking_macro_avg.md">Report table</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="climate-proof-title">
+        <div class="container">
+          <h2 id="climate-proof-title">California-Portugal Climate Pipeline (Support Proof)</h2>
+          <div class="card">
+            <p><strong>Quick commands:</strong> <code>uv sync</code>, <code>uv run climate-train-baseline</code></p>
+            <p><strong>Evidence outputs:</strong> <code>models/baseline_rf_metrics.json</code>, transform and feature tests under <code>tests/</code></p>
+            <ul>
+              <li><a href="https://github.com/chranama/california-portugal-climate#5-minute-reviewer-path">5-minute reviewer path</a></li>
+              <li><a href="https://github.com/chranama/california-portugal-climate/blob/main/models/baseline_rf_metrics.json">Model metrics</a></li>
+              <li><a href="https://github.com/chranama/california-portugal-climate/blob/main/tests/test_ml_features.py">Feature integrity test</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <p>Last updated: March 6, 2026</p>
+        <p>
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">|</span>
+          <a href="recruiter-brief.html">Recruiter Brief</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

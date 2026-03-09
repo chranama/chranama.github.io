@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Case Study | BioLLM Robustness Evaluation Infrastructure</title>
+    <meta name="description" content="Deterministic biomedical QA robustness evaluation with perturbations, seed controls, phenotype analysis, and reproducible reports.">
+    <link rel="canonical" href="https://chranama.github.io/case-study-biollm-robustness.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Case Study: BioLLM Robustness Evaluation Infrastructure">
+    <meta property="og:description" content="Config-driven biomedical QA experiments with deterministic perturbation analysis and phenotype-aware deltas.">
+    <meta property="og:url" content="https://chranama.github.io/case-study-biollm-robustness.html">
+    <meta property="og:image" content="https://chranama.github.io/assets/og-biollm.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Case Study: BioLLM Robustness Evaluation Infrastructure">
+    <meta name="twitter:description" content="Experiment-first LLM evaluation system with reproducible artifacts.">
+    <meta name="twitter:image" content="https://chranama.github.io/assets/og-biollm.svg">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <div class="container">
+        <p class="kicker">Support Case Study</p>
+        <h1>BioLLM Robustness Evaluation</h1>
+        <p class="title">BioLLM-Finetune</p>
+        <p>
+          This case study demonstrates experiment infrastructure for robust LLM evaluation in biomedical QA,
+          with deterministic execution and reproducible reporting artifacts.
+        </p>
+        <p><a class="button" href="index.html">Back to Portfolio</a></p>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="section" aria-labelledby="problem-title">
+        <div class="container">
+          <h2 id="problem-title">Problem</h2>
+          <div class="card">
+            <p>
+              Benchmark scores alone do not explain model reliability under perturbation or across input phenotypes.
+              Teams need repeatable experiments that quantify robustness and expose failure patterns.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="approach-title">
+        <div class="container">
+          <h2 id="approach-title">Approach</h2>
+          <div class="card">
+            <ul>
+              <li>Config-driven experiment grid with deterministic seeds.</li>
+              <li>Clean vs perturbed runs across lexical, contextual, and logical perturbations.</li>
+              <li>Phenotype tagging and aggregation to surface segmented reliability effects.</li>
+              <li>Scripted generation of report-ready tables and figures.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="proof-title">
+        <div class="container">
+          <h2 id="proof-title">Proof Artifacts</h2>
+          <div class="card">
+            <ul>
+              <li><a href="https://github.com/chranama/biollm-finetune/blob/main/results/phase4/summary.json">Phase 4 summary JSON</a></li>
+              <li><a href="https://github.com/chranama/biollm-finetune/blob/main/results/phase4/analysis/phase4_findings.md">Phase 4 findings</a></li>
+              <li><a href="https://github.com/chranama/biollm-finetune/blob/main/results/phase4/report_artifacts/tables/perturbation_ranking_macro_avg.md">Perturbation ranking table</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="verification-title">
+        <div class="container">
+          <h2 id="verification-title">5-Minute Reviewer Path</h2>
+          <div class="card">
+            <ol>
+              <li>Open the <a href="https://github.com/chranama/biollm-finetune#what-this-proves-for-hiring">What this proves for hiring</a> section.</li>
+              <li>Run the tiny validation path from README quickstart.</li>
+              <li>Inspect Phase 4 analysis and table artifacts linked above.</li>
+            </ol>
+            <p><strong>Last verified:</strong> March 6, 2026</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <p>Last updated: March 6, 2026</p>
+        <p>
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">|</span>
+          <a href="proof-portfolio.html">Proof Portfolio</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

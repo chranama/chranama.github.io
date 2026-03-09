@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="627" viewBox="0 0 1200 627" role="img" aria-label="Recruiter brief">
+  <rect width="1200" height="627" fill="#111827"/>
+  <rect x="64" y="72" width="1072" height="483" rx="24" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+  <text x="100" y="175" fill="#7dd3fc" font-family="Arial, Helvetica, sans-serif" font-size="34">Recruiter Packet</text>
+  <text x="100" y="250" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700">AI Backend/Platform Candidate</text>
+  <text x="100" y="320" fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="32">Top 3 proofs, interview talking points, and direct artifact links</text>
+  <text x="100" y="400" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700">Christopher Anaya</text>
+  <text x="100" y="455" fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="28">LLM systems | API contracts | eval-to-policy loops | observability</text>
+  <text x="100" y="515" fill="#7dd3fc" font-family="Arial, Helvetica, sans-serif" font-size="28">chranama.github.io/recruiter-brief.html</text>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="627" viewBox="0 0 1200 627" role="img" aria-label="Climate Pipeline Case Study">
+  <rect width="1200" height="627" fill="#1f2937"/>
+  <rect x="64" y="72" width="1072" height="483" rx="24" fill="#111827" stroke="#f59e0b" stroke-width="2"/>
+  <text x="100" y="170" fill="#fcd34d" font-family="Arial, Helvetica, sans-serif" font-size="34">Case Study</text>
+  <text x="100" y="240" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="700">California-Portugal Climate Pipeline</text>
+  <text x="100" y="315" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="700">Data Platform + ML Reliability</text>
+  <text x="100" y="385" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="30">DuckDB + dbt + Prefect + anomaly modeling</text>
+  <text x="100" y="435" fill="#e5e7eb" font-family="Arial, Helvetica, sans-serif" font-size="30">Proof: tested transforms, feature integrity, baseline model</text>
+  <text x="100" y="500" fill="#fcd34d" font-family="Arial, Helvetica, sans-serif" font-size="28">AI platform engineering beyond a single model service</text>
+</svg>

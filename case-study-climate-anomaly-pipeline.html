@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Case Study | Climate Data + ML Platform Reliability</title>
+    <meta name="description" content="End-to-end climate pipeline with DuckDB, dbt, Prefect orchestration, tested anomaly features, and reproducible baseline model outputs.">
+    <link rel="canonical" href="https://chranama.github.io/case-study-climate-anomaly-pipeline.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Case Study: Climate Data + ML Platform Reliability">
+    <meta property="og:description" content="Production-style data and ML platform engineering across ingestion, transforms, orchestration, and anomaly modeling.">
+    <meta property="og:url" content="https://chranama.github.io/case-study-climate-anomaly-pipeline.html">
+    <meta property="og:image" content="https://chranama.github.io/assets/og-climate.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Case Study: Climate Data + ML Platform Reliability">
+    <meta name="twitter:description" content="Data platform + ML reliability proof for AI backend/platform hiring.">
+    <meta name="twitter:image" content="https://chranama.github.io/assets/og-climate.svg">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <div class="container">
+        <p class="kicker">Support Case Study</p>
+        <h1>Climate Data + ML Platform</h1>
+        <p class="title">California-Portugal Climate Pipeline</p>
+        <p>
+          This case study demonstrates end-to-end platform engineering for data and ML workloads:
+          ingestion, transformations, orchestration, tested features, and baseline model outputs.
+        </p>
+        <p><a class="button" href="index.html">Back to Portfolio</a></p>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="section" aria-labelledby="problem-title">
+        <div class="container">
+          <h2 id="problem-title">Problem</h2>
+          <div class="card">
+            <p>
+              ML projects often stop at notebooks. Reliable systems require repeatable data ingestion,
+              validated transformations, orchestration, and tested feature pipelines feeding model training.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="approach-title">
+        <div class="container">
+          <h2 id="approach-title">Approach</h2>
+          <div class="card">
+            <ul>
+              <li>Daily climate ingestion and normalization into DuckDB.</li>
+              <li>Layered dbt models (landing, clean, anomaly, ML features).</li>
+              <li>Prefect orchestration for daily and backfill runs.</li>
+              <li>Baseline RandomForest anomaly prediction with stored metrics.</li>
+              <li>Automated tests for transform logic, observability tables, and feature integrity.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="proof-title">
+        <div class="container">
+          <h2 id="proof-title">Proof Artifacts</h2>
+          <div class="card">
+            <ul>
+              <li><a href="https://github.com/chranama/california-portugal-climate/blob/main/models/baseline_rf_metrics.json">Baseline model metrics</a></li>
+              <li><a href="https://github.com/chranama/california-portugal-climate/blob/main/tests/test_anomaly_layer.py">Anomaly layer tests</a></li>
+              <li><a href="https://github.com/chranama/california-portugal-climate/blob/main/tests/test_ml_features.py">ML feature integrity tests</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="verification-title">
+        <div class="container">
+          <h2 id="verification-title">5-Minute Reviewer Path</h2>
+          <div class="card">
+            <ol>
+              <li>Open <a href="https://github.com/chranama/california-portugal-climate#what-this-proves-for-hiring">What this proves for hiring</a>.</li>
+              <li>Run quickstart commands in README (<code>uv sync</code>, <code>uv run climate-train-baseline</code>).</li>
+              <li>Inspect baseline metrics and tests linked above.</li>
+            </ol>
+            <p><strong>Last verified:</strong> March 6, 2026</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <p>Last updated: March 6, 2026</p>
+        <p>
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">|</span>
+          <a href="proof-portfolio.html">Proof Portfolio</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

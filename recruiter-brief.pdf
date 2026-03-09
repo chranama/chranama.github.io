@@ -1,0 +1,96 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 1779 >>
+stream
+BT
+/F1 11 Tf
+50 770 Td
+(Recruiter Brief ? Christopher Anaya) Tj
+0 -16 Td
+(AI Engineer \(Backend/Platform, LLM Systems\)) Tj
+0 -16 Td
+(Last updated: March 6, 2026) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(Role Fit) Tj
+0 -16 Td
+(- Entry-Level AI Backend Engineer) Tj
+0 -16 Td
+(- Entry-Level AI Platform Engineer) Tj
+0 -16 Td
+(- Applied AI Engineer \(LLM Infrastructure\)) Tj
+0 -16 Td
+(- ML Platform Engineer \(Early Career\)) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(Top 3 Proofs) Tj
+0 -16 Td
+(1\) LLM Extraction Platform) Tj
+0 -16 Td
+(   Runtime capability gate controlled by onboarding artifacts, with deterministic PASS/FAIL evidence outputs.) Tj
+0 -16 Td
+(   Repo: https://github.com/chranama/llm-extraction-platform) Tj
+0 -16 Td
+(   Case study: https://chranama.github.io/case-study-extract-gating.html) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(2\) BioLLM-Finetune) Tj
+0 -16 Td
+(   Deterministic biomedical QA robustness infrastructure with phenotype-aware analysis.) Tj
+0 -16 Td
+(   Repo: https://github.com/chranama/biollm-finetune) Tj
+0 -16 Td
+(   Case study: https://chranama.github.io/case-study-biollm-robustness.html) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(3\) California-Portugal Climate Pipeline) Tj
+0 -16 Td
+(   End-to-end data + ML platform with tested transforms and baseline anomaly model outputs.) Tj
+0 -16 Td
+(   Repo: https://github.com/chranama/california-portugal-climate) Tj
+0 -16 Td
+(   Case study: https://chranama.github.io/case-study-climate-anomaly-pipeline.html) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(Interview Talking Points) Tj
+0 -16 Td
+(- Eval artifacts to runtime policy controls.) Tj
+0 -16 Td
+(- Contract-driven API design for AI reliability.) Tj
+0 -16 Td
+(- Reviewer-fast evidence paths and deterministic outputs.) Tj
+0 -16 Td
+(- Testing, orchestration, and observability for production AI systems.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000185 00000 n 
+0000002016 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R /Info << /Title (Recruiter Brief) >> >>
+startxref
+2142
+%%EOF

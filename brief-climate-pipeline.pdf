@@ -1,0 +1,52 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 757 >>
+stream
+BT
+/F1 11 Tf
+50 770 Td
+(California-Portugal Climate Pipeline ? One-Page Brief) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(Role signal: data and ML platform engineering for reliable production workflows.) Tj
+0 -16 Td
+(Problem: ML systems need robust ingestion, validated transformations, orchestration, and tested features.) Tj
+0 -16 Td
+(Solution: layered DuckDB/dbt pipeline with Prefect orchestration, anomaly feature store, and baseline model.) Tj
+0 -16 Td
+(Key stack: Python, DuckDB, dbt, Prefect, Streamlit, pytest.) Tj
+0 -16 Td
+(Proof artifacts: baseline model metrics, anomaly tests, feature integrity tests.) Tj
+0 -16 Td
+(Quick verify: uv sync && uv run climate-train-baseline) Tj
+0 -16 Td
+(Repository: https://github.com/chranama/california-portugal-climate) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000185 00000 n 
+0000000993 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R /Info << /Title (Climate Brief) >> >>
+startxref
+1119
+%%EOF

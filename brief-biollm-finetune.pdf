@@ -1,0 +1,52 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 763 >>
+stream
+BT
+/F1 11 Tf
+50 770 Td
+(BioLLM-Finetune ? One-Page Brief) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(Role signal: ML evaluation and experimentation infrastructure engineering.) Tj
+0 -16 Td
+(Problem: baseline metrics do not expose robustness failures across perturbations and phenotypes.) Tj
+0 -16 Td
+(Solution: deterministic, config-driven experiments with clean-vs-perturbed deltas and phenotype aggregation.) Tj
+0 -16 Td
+(Key stack: Python, Transformers, YAML config grids, analysis/report scripting.) Tj
+0 -16 Td
+(Proof artifacts: phase summaries, findings markdown, perturbation ranking tables, integrity checks.) Tj
+0 -16 Td
+(Quick verify: run tiny config path and inspect results/phase4 outputs.) Tj
+0 -16 Td
+(Repository: https://github.com/chranama/biollm-finetune) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000185 00000 n 
+0000000999 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R /Info << /Title (BioLLM Brief) >> >>
+startxref
+1125
+%%EOF

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="627" viewBox="0 0 1200 627" role="img" aria-label="BioLLM Robustness Case Study">
+  <rect width="1200" height="627" fill="#10231b"/>
+  <rect x="64" y="72" width="1072" height="483" rx="24" fill="#132a22" stroke="#22c55e" stroke-width="2"/>
+  <text x="100" y="170" fill="#86efac" font-family="Arial, Helvetica, sans-serif" font-size="34">Case Study</text>
+  <text x="100" y="240" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="700">BioLLM-Finetune</text>
+  <text x="100" y="305" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700">Biomedical QA Robustness</text>
+  <text x="100" y="380" fill="#d1fae5" font-family="Arial, Helvetica, sans-serif" font-size="30">Deterministic perturbation analysis across seeds</text>
+  <text x="100" y="430" fill="#d1fae5" font-family="Arial, Helvetica, sans-serif" font-size="30">Proof: phenotype-aware deltas and reproducible reports</text>
+  <text x="100" y="500" fill="#86efac" font-family="Arial, Helvetica, sans-serif" font-size="28">Experiment-first AI evaluation infrastructure</text>
+</svg>
