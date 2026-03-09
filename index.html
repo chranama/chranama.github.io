@@ -221,7 +221,7 @@
 
     <footer class="site-footer">
       <div class="container footer-row">
-        <p>Last updated: March 6, 2026</p>
+        <p>Last updated: <time data-last-updated></time></p>
         <p>
           <a href="proof-portfolio.html">Proof Portfolio</a>
           <span aria-hidden="true">|</span>
@@ -231,5 +231,27 @@
         </p>
       </div>
     </footer>
+      <script>
+      (function () {
+        var items = document.querySelectorAll('[data-last-updated]');
+        if (!items.length) return;
+        var modified = new Date(document.lastModified);
+        if (Number.isNaN(modified.getTime())) {
+          items.forEach(function (item) {
+            item.textContent = 'Unknown';
+          });
+          return;
+        }
+        var formatted = new Intl.DateTimeFormat('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        }).format(modified);
+        items.forEach(function (item) {
+          item.textContent = formatted;
+          item.setAttribute('datetime', modified.toISOString());
+        });
+      })();
+    </script>
   </body>
 </html>
