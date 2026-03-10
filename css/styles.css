@@ -80,17 +80,17 @@ a:focus-visible,
   padding: var(--space-6) 0 var(--space-5);
 }
 
-.hero-texture {
+.site-header::before {
+  content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-}
-
-.hero-texture img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  background-image: url("../assets/ui/hero-texture.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.95;
 }
 
 .site-header .container {
@@ -185,17 +185,7 @@ h3 {
   overflow: hidden;
 }
 
-.project-watermark {
-  position: absolute;
-  top: -2.2rem;
-  right: -2.4rem;
-  width: 11.2rem;
-  height: auto;
-  opacity: 0.42;
-  pointer-events: none;
-}
-
-.project-card > *:not(.project-watermark) {
+.project-card > * {
   position: relative;
   z-index: 1;
 }
@@ -283,11 +273,9 @@ h3 {
 }
 
 @media (max-width: 40rem) {
-  .project-watermark {
-    width: 8.7rem;
-    top: -1.9rem;
-    right: -2.2rem;
-    opacity: 0.3;
+  .site-header::before {
+    background-size: auto 100%;
+    background-position: right center;
   }
 }
 
