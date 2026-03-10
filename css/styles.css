@@ -76,6 +76,7 @@ a:focus-visible,
 .site-header {
   position: relative;
   overflow: hidden;
+  background: #ffffff;
   border-bottom: 1px solid var(--line);
   padding: var(--space-6) 0 var(--space-5);
 }
@@ -86,11 +87,13 @@ a:focus-visible,
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  background-image: url("../assets/ui/hero-texture.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.95;
+  background:
+    radial-gradient(circle at 82% 24%, rgba(15, 79, 168, 0.14) 0 16%, rgba(15, 79, 168, 0.05) 30%, rgba(15, 79, 168, 0) 55%),
+    radial-gradient(circle at 68% 72%, rgba(15, 79, 168, 0.10) 0 12%, rgba(15, 79, 168, 0.03) 28%, rgba(15, 79, 168, 0) 52%),
+    linear-gradient(90deg, rgba(15, 79, 168, 0.08) 0%, rgba(15, 79, 168, 0.02) 100%),
+    repeating-linear-gradient(0deg, rgba(15, 79, 168, 0.05) 0 1px, rgba(15, 79, 168, 0) 1px 44px),
+    repeating-linear-gradient(90deg, rgba(15, 79, 168, 0.05) 0 1px, rgba(15, 79, 168, 0) 1px 44px);
+  opacity: 0.55;
 }
 
 .site-header .container {
@@ -119,22 +122,16 @@ h1 {
 
 h2 {
   font-size: clamp(1.35rem, 3vw, 1.8rem);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-}
-
-h2::before {
-  content: "";
-  width: 1.8rem;
-  height: 0.22rem;
-  border-radius: 999px;
-  background: #0f4fa8;
-  opacity: 0.45;
 }
 
 h3 {
   font-size: 1.1rem;
+}
+
+.section h2 {
+  display: inline-block;
+  border-left: 0.32rem solid rgba(15, 79, 168, 0.62);
+  padding-left: 0.72rem;
 }
 
 .title {
@@ -274,8 +271,7 @@ h3 {
 
 @media (max-width: 40rem) {
   .site-header::before {
-    background-size: auto 100%;
-    background-position: right center;
+    opacity: 0.45;
   }
 }
 
