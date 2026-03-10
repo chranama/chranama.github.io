@@ -21,6 +21,9 @@
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
+      <div class="hero-texture" aria-hidden="true">
+        <img src="assets/ui/hero-texture.svg" alt="">
+      </div>
       <div class="container">
         <p class="kicker">AI Backend and Platform Portfolio</p>
         <h1>Christopher Anaya</h1>
@@ -35,6 +38,7 @@
             <li><a class="button" href="resume.pdf">Resume (PDF)</a></li>
             <li><a class="button" href="recruiter-brief.html">Recruiter Brief</a></li>
             <li><a class="button" href="proof-portfolio.html">Proof Portfolio</a></li>
+            <li><a class="button" href="lessons-learned.html">Lessons Learned</a></li>
             <li><a class="button" href="https://github.com/chranama">GitHub</a></li>
             <li><a class="button" href="https://www.linkedin.com/in/chris-anaya-ai/">LinkedIn</a></li>
             <li><a class="button" href="mailto:chris.anaya.ai@gmail.com">Email</a></li>
@@ -63,7 +67,12 @@
           <h2 id="featured-projects-title">Featured Projects</h2>
 
           <article class="card project-card" aria-labelledby="project-llm-extract-title">
+            <img class="project-watermark" src="assets/ui/project-watermark-llm.svg" alt="" aria-hidden="true">
             <h3 id="project-llm-extract-title">LLM Extraction Platform (Flagship)</h3>
+            <figure class="project-architecture-preview">
+              <img src="assets/media/llm-extraction-architecture-system.svg" alt="LLM Extraction Platform architecture showing runtime serving, eval-to-policy control flow, and evidence artifacts">
+              <figcaption>Runtime plane + control loop + evidence pipeline (single-system view).</figcaption>
+            </figure>
             <p>
               Production-style LLM platform focused on structured extraction reliability, API contracts,
               and runtime policy enforcement.
@@ -86,6 +95,7 @@
           </article>
 
           <article class="card project-card" aria-labelledby="project-biollm-title">
+            <img class="project-watermark" src="assets/ui/project-watermark-biollm.svg" alt="" aria-hidden="true">
             <h3 id="project-biollm-title">BioLLM-Finetune</h3>
             <p>
               Experiment-first biomedical QA infrastructure for deterministic robustness analysis and phenotype-aware evaluation.
@@ -108,6 +118,7 @@
           </article>
 
           <article class="card project-card" aria-labelledby="project-climate-title">
+            <img class="project-watermark" src="assets/ui/project-watermark-climate.svg" alt="" aria-hidden="true">
             <h3 id="project-climate-title">California-Portugal Climate Pipeline</h3>
             <p>
               End-to-end data and ML platform spanning ingestion, warehouse transforms, feature engineering,
@@ -136,6 +147,11 @@
         <div class="container">
           <h2 id="proof-title">Proof and Evidence</h2>
           <div class="card">
+            <p class="proof-badge-row" aria-label="Proof characteristics">
+              <span class="proof-badge">CI-Backed</span>
+              <span class="proof-badge">Reproducible</span>
+              <span class="proof-badge">Evidence-Linked</span>
+            </p>
             <p class="badge-row">
               <a href="https://github.com/chranama/chranama.github.io/actions/workflows/site-checks.yml">
                 <img src="https://github.com/chranama/chranama.github.io/actions/workflows/site-checks.yml/badge.svg" alt="Site checks workflow status badge">
@@ -143,6 +159,7 @@
             </p>
             <ul>
               <li><a href="proof-portfolio.html">Proof Portfolio: all reviewer commands + artifacts</a></li>
+              <li><a href="lessons-learned.html">Lessons Learned: engineering decisions and tradeoffs</a></li>
               <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/.github/workflows/ci.yml">Flagship CI workflow</a></li>
               <li><a href="https://github.com/chranama/biollm-finetune/blob/main/README.md">BioLLM evaluation infrastructure</a></li>
               <li><a href="https://github.com/chranama/california-portugal-climate/blob/main/README.md">Climate platform architecture</a></li>

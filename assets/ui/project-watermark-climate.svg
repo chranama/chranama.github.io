@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" role="img" aria-labelledby="t d">
+  <title id="t">Climate watermark shape</title>
+  <desc id="d">Subtle layered contour watermark.</desc>
+  <path d="M36 190c36-50 72-24 108-70s72-26 100-64" fill="none" stroke="#0f4fa8" stroke-opacity="0.18" stroke-width="8" stroke-linecap="round"/>
+  <path d="M36 220c36-50 72-24 108-70s72-26 100-64" fill="none" stroke="#0f4fa8" stroke-opacity="0.12" stroke-width="8" stroke-linecap="round"/>
+  <path d="M36 160c36-50 72-24 108-70s72-26 100-64" fill="none" stroke="#0f4fa8" stroke-opacity="0.10" stroke-width="8" stroke-linecap="round"/>
+</svg>
