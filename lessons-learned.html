@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lessons Learned | Christopher Anaya</title>
+    <meta name="description" content="Cross-project lessons learned from LLM backend/platform engineering, robustness research, and climate ML pipeline operations.">
+    <link rel="canonical" href="https://chranama.github.io/lessons-learned.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Lessons Learned | Christopher Anaya">
+    <meta property="og:description" content="Engineering lessons and decisions backed by proof artifacts across all portfolio projects.">
+    <meta property="og:url" content="https://chranama.github.io/lessons-learned.html">
+    <meta property="og:image" content="https://chranama.github.io/assets/og-home-v2.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lessons Learned | Christopher Anaya">
+    <meta name="twitter:description" content="What worked, what failed, and what changed in production-style AI systems work.">
+    <meta name="twitter:image" content="https://chranama.github.io/assets/og-home-v2.svg">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <div class="container">
+        <p class="kicker">Lessons Learned</p>
+        <h1>Engineering Lessons Across Portfolio Projects</h1>
+        <p class="title">Context -> Lesson -> Decision -> Evidence</p>
+        <p><a class="button" href="index.html">Back to Portfolio</a></p>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="section" aria-labelledby="llm-lessons-title">
+        <div class="container">
+          <h2 id="llm-lessons-title">LLM Extraction Platform</h2>
+          <div class="card">
+            <ol>
+              <li>
+                <strong>Context:</strong> extraction can appear to work on unsupported models.
+                <br><strong>Lesson:</strong> prompt-level behavior is not enough for reliability guarantees.
+                <br><strong>Decision:</strong> enforce capability at runtime through policy gating.
+                <br><strong>Evidence:</strong> <code>proof/evidence_manifest.latest.json</code>, PASS/FAIL runtime outputs in <code>traffic_out/...</code>.
+              </li>
+              <li>
+                <strong>Context:</strong> PASS and FAIL paths can fail for different reasons (policy block vs runtime/model load issues).
+                <br><strong>Lesson:</strong> failure mode classification matters as much as pass/fail status.
+                <br><strong>Decision:</strong> preserve runtime probes and manifests so capability guardrail failures are distinguishable from runtime failures.
+                <br><strong>Evidence:</strong> model decision memo + <code>host_pass_extract.json</code>/<code>host_fail_extract.json</code> artifacts.
+              </li>
+              <li>
+                <strong>Context:</strong> multi-runtime, multi-lane CI can create confidence gaps if checks are weak or non-reproducible.
+                <br><strong>Lesson:</strong> portfolio credibility depends on strict quality lanes and local reproducibility.
+                <br><strong>Decision:</strong> enforce no-noop core checks, compact failure artifact bundles, and deterministic local CI smoke matrix.
+                <br><strong>Evidence:</strong> CI hardening doc + <code>scripts/ci_smoke_matrix.sh</code> + required core test lanes.
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="biollm-lessons-title">
+        <div class="container">
+          <h2 id="biollm-lessons-title">BioLLM-Finetune (Thesis-Derived)</h2>
+          <div class="card">
+            <ol>
+              <li>
+                <strong>Context:</strong> thesis BioASQ results were uneven by question type (yes/no strongest, factoid/list weakest).
+                <br><strong>Lesson:</strong> one aggregate score hides the real failure modes of generative biomedical QA.
+                <br><strong>Decision:</strong> evaluate by type and metric, then add explicit robustness slices (phenotype and perturbation views).
+                <br><strong>Evidence:</strong> thesis Results chapter reports yes/no peak accuracy of 64.0% (Macro-F1 0.5486), factoid strict accuracy up to 15.8%, and near-zero list scores.
+              </li>
+              <li>
+                <strong>Context:</strong> formatting and schema mismatches caused large evaluation penalties even when answers were semantically close.
+                <br><strong>Lesson:</strong> output contracts and post-processing are core system components, not cosmetic cleanup.
+                <br><strong>Decision:</strong> enforce structured output normalization and retain deterministic evidence artifacts for verification.
+                <br><strong>Evidence:</strong> thesis sections on error analysis + post-processing impact, plus canonical artifacts in <code>proof/evidence_manifest.latest.json</code>.
+              </li>
+              <li>
+                <strong>Context:</strong> high-capability systems still had factual grounding limits in closed-book generation.
+                <br><strong>Lesson:</strong> reliability requires retrieval/knowledge grounding and richer evaluation, not just stronger prompting.
+                <br><strong>Decision:</strong> roadmap emphasizes RAG, ontology-informed validation, and human-in-the-loop quality assessment.
+                <br><strong>Evidence:</strong> thesis Conclusion and Future Work chapter + current reproducibility pipeline in the repo.
+              </li>
+            </ol>
+            <p class="inline-links">
+              <a href="masters_thesis.pdf">Master's Thesis (PDF)</a>
+              <span aria-hidden="true">|</span>
+              <a href="https://github.com/chranama/biollm-finetune/blob/main/docs/results_and_discussion.md">Results and Discussion</a>
+              <span aria-hidden="true">|</span>
+              <a href="https://github.com/chranama/biollm-finetune/blob/main/docs/limitations_and_future_work.md">Limitations and Future Work</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="climate-lessons-title">
+        <div class="container">
+          <h2 id="climate-lessons-title">California-Portugal Climate Pipeline</h2>
+          <div class="card">
+            <ol>
+              <li>
+                <strong>Context:</strong> notebook-first ML work breaks down during repeated runs.
+                <br><strong>Lesson:</strong> orchestration and layer contracts are non-optional for reliability.
+                <br><strong>Decision:</strong> use dbt layered models + Prefect workflows + persisted run outputs.
+                <br><strong>Evidence:</strong> <code>src/climate_pipeline/orchestration/prefect_flow.py</code>, dbt model layers, canonical manifest.
+              </li>
+              <li>
+                <strong>Context:</strong> baseline model metrics are misleading when feature tables drift or null handling changes.
+                <br><strong>Lesson:</strong> schema/feature integrity checks must gate model trust.
+                <br><strong>Decision:</strong> test required feature columns, target binary constraints, and no-NaN guarantees before treating metrics as valid.
+                <br><strong>Evidence:</strong> <code>tests/test_ml_features.py</code> and anomaly-layer schema tests.
+              </li>
+              <li>
+                <strong>Context:</strong> pipeline freshness and model quality degrade silently without run-level observability.
+                <br><strong>Lesson:</strong> operational metadata (deltas, freshness, run mode) is part of ML reliability proof.
+                <br><strong>Decision:</strong> log pipeline run records and ML metrics to warehouse observability tables and assert them in tests.
+                <br><strong>Evidence:</strong> <code>src/climate_pipeline/observability/run_logger.py</code>, <code>tests/test_observability_models.py</code>, <code>tests/test_ml_training_smoke.py</code>.
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <p>Last updated: <span data-last-updated></span></p>
+        <p>
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">|</span>
+          <a href="proof-portfolio.html">Proof Portfolio</a>
+          <span aria-hidden="true">|</span>
+          <a href="recruiter-brief.html">Recruiter Brief</a>
+        </p>
+      </div>
+    </footer>
+    <script>
+      (function () {
+        var items = document.querySelectorAll('[data-last-updated]');
+        if (!items.length) return;
+        var modified = new Date(document.lastModified);
+        if (Number.isNaN(modified.getTime())) {
+          items.forEach(function (item) { item.textContent = 'Unknown'; });
+          return;
+        }
+        var formatted = new Intl.DateTimeFormat('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        }).format(modified);
+        items.forEach(function (item) { item.textContent = formatted; });
+      })();
+    </script>
+  </body>
+</html>
