@@ -75,6 +75,7 @@
               <li>Extract-gate demo produces deterministic PASS/FAIL evidence manifests.</li>
               <li>Repository includes CI, integration coverage, and deployment diagnostics.</li>
             </ul>
+            <p><strong>Proof point:</strong> Claim: extraction is capability-gated at runtime. Command: <code>python proof/validate_evidence_manifest.py</code>. Artifact: <code>proof/evidence_manifest.latest.json</code> with PASS/FAIL runtime outputs. Signal: PASS allows extraction, FAIL is blocked.</p>
             <p class="inline-links">
               <a href="https://github.com/chranama/llm-extraction-platform">Repository</a>
               <span aria-hidden="true">|</span>
@@ -96,6 +97,7 @@
               <li>Clean vs perturbed evaluation with phenotype-conditioned deltas.</li>
               <li>Scripted analysis tables and integrity checks for traceability.</li>
             </ul>
+            <p><strong>Proof point:</strong> Claim: robustness evaluation is reproducible. Command: <code>python proof/validate_evidence_manifest.py</code>. Artifact: <code>proof/evidence_manifest.latest.json</code>, <code>results/phase4/summary.json</code>, findings/ranking outputs. Signal: canonical artifacts exist and validate.</p>
             <p class="inline-links">
               <a href="https://github.com/chranama/biollm-finetune">Repository</a>
               <span aria-hidden="true">|</span>
@@ -118,6 +120,7 @@
               <li>RandomForest baseline predicts next-month anomaly events from engineered features.</li>
               <li>Prefect orchestration supports daily/backfill runs with testing and observability outputs.</li>
             </ul>
+            <p><strong>Proof point:</strong> Claim: data/ML pipeline reliability is production-oriented. Command: <code>python proof/validate_evidence_manifest.py</code>. Artifact: <code>proof/evidence_manifest.latest.json</code>, baseline metrics, prediction sample, and test summary. Signal: all required artifacts resolve and pass validation.</p>
             <p class="inline-links">
               <a href="https://github.com/chranama/california-portugal-climate">Repository</a>
               <span aria-hidden="true">|</span>

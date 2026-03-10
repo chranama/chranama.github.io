@@ -34,10 +34,14 @@
         <div class="container">
           <h2 id="llm-proof-title">LLM Extraction Platform (Flagship)</h2>
           <div class="card">
-            <p><strong>Quick command:</strong> <code>scripts/demo_extract_gate/run_host_transformers.sh</code></p>
-            <p><strong>Evidence outputs:</strong> <code>traffic_out/&lt;run&gt;/evidence_manifest.json</code>, <code>host_pass_runtime.json</code>, <code>host_fail_runtime.json</code></p>
+            <p><strong>Claim:</strong> extraction capability is policy-gated by onboarding evidence and verified with deterministic runtime outputs.</p>
+            <p><strong>Command:</strong> <code>python proof/validate_evidence_manifest.py</code></p>
+            <p><strong>Artifacts:</strong> <code>proof/evidence_manifest.latest.json</code>, <code>traffic_out/phase41_20260304T230327Z/host_pass_runtime.json</code>, <code>traffic_out/phase41_20260304T230327Z/host_fail_runtime.json</code></p>
+            <p><strong>Signal:</strong> PASS runtime is extract-capable while FAIL runtime is capability-blocked.</p>
             <ul>
               <li><a href="https://github.com/chranama/llm-extraction-platform#10-minute-reviewer-path">Reviewer path</a></li>
+              <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/proof/evidence_manifest.latest.json">Canonical evidence manifest</a></li>
+              <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/proof/proof_points.latest.md">Proof points summary</a></li>
               <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/docs/02-project-demos.md">Demo docs</a></li>
               <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/.github/workflows/ci.yml">CI workflow</a></li>
             </ul>
@@ -47,12 +51,16 @@
 
       <section class="section" aria-labelledby="biollm-proof-title">
         <div class="container">
-          <h2 id="biollm-proof-title">BioLLM-Finetune (Support Proof)</h2>
+          <h2 id="biollm-proof-title">BioLLM-Finetune</h2>
           <div class="card">
-            <p><strong>Quick commands:</strong> <code>python -m venv .venv</code>, <code>pip install -e .</code>, run tiny config from README.</p>
-            <p><strong>Evidence outputs:</strong> <code>results/phase4/summary.json</code>, <code>results/phase4/analysis/phase4_findings.md</code></p>
+            <p><strong>Claim:</strong> deterministic robustness evaluation runs produce reproducible, reviewable artifacts.</p>
+            <p><strong>Command:</strong> <code>python proof/validate_evidence_manifest.py</code></p>
+            <p><strong>Artifacts:</strong> <code>proof/evidence_manifest.latest.json</code>, <code>results/phase4/summary.json</code>, <code>results/phase4/analysis/phase4_findings.md</code>, <code>results/phase4/report_artifacts/tables/perturbation_ranking_macro_avg.md</code></p>
+            <p><strong>Signal:</strong> summary, findings, and ranking artifacts resolve from the canonical manifest and validation passes.</p>
             <ul>
               <li><a href="https://github.com/chranama/biollm-finetune#5-minute-reviewer-path">5-minute reviewer path</a></li>
+              <li><a href="https://github.com/chranama/biollm-finetune/blob/main/proof/evidence_manifest.latest.json">Canonical evidence manifest</a></li>
+              <li><a href="https://github.com/chranama/biollm-finetune/blob/main/proof/proof_points.latest.md">Proof points summary</a></li>
               <li><a href="https://github.com/chranama/biollm-finetune/blob/main/results/phase4/analysis/phase4_findings.md">Findings</a></li>
               <li><a href="https://github.com/chranama/biollm-finetune/blob/main/results/phase4/report_artifacts/tables/perturbation_ranking_macro_avg.md">Report table</a></li>
             </ul>
@@ -62,12 +70,16 @@
 
       <section class="section" aria-labelledby="climate-proof-title">
         <div class="container">
-          <h2 id="climate-proof-title">California-Portugal Climate Pipeline (Support Proof)</h2>
+          <h2 id="climate-proof-title">California-Portugal Climate Pipeline</h2>
           <div class="card">
-            <p><strong>Quick commands:</strong> <code>uv sync</code>, <code>uv run climate-train-baseline</code></p>
-            <p><strong>Evidence outputs:</strong> <code>models/baseline_rf_metrics.json</code>, transform and feature tests under <code>tests/</code></p>
+            <p><strong>Claim:</strong> end-to-end data and ML pipeline reliability is evidenced with canonical model and test artifacts.</p>
+            <p><strong>Command:</strong> <code>python proof/validate_evidence_manifest.py</code></p>
+            <p><strong>Artifacts:</strong> <code>proof/evidence_manifest.latest.json</code>, <code>models/baseline_rf_metrics.json</code>, <code>data/mart/predictions/baseline_rf_predictions.csv</code>, <code>proof/test_summary.latest.json</code></p>
+            <p><strong>Signal:</strong> canonical baseline metrics, predictions sample, and required test-summary artifact all exist and validate.</p>
             <ul>
               <li><a href="https://github.com/chranama/california-portugal-climate#5-minute-reviewer-path">5-minute reviewer path</a></li>
+              <li><a href="https://github.com/chranama/california-portugal-climate/blob/main/proof/evidence_manifest.latest.json">Canonical evidence manifest</a></li>
+              <li><a href="https://github.com/chranama/california-portugal-climate/blob/main/proof/proof_points.latest.md">Proof points summary</a></li>
               <li><a href="https://github.com/chranama/california-portugal-climate/blob/main/models/baseline_rf_metrics.json">Model metrics</a></li>
               <li><a href="https://github.com/chranama/california-portugal-climate/blob/main/tests/test_ml_features.py">Feature integrity test</a></li>
             </ul>

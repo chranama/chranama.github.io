@@ -70,11 +70,16 @@
         <div class="container">
           <h2 id="proof-title">Proof Artifacts</h2>
           <div class="card">
+            <p><strong>Claim:</strong> extraction behavior is governed by capability policy and verified with deterministic artifacts.</p>
+            <p><strong>Command:</strong> <code>python proof/validate_evidence_manifest.py</code></p>
+            <p><strong>Artifacts:</strong></p>
             <ul>
-              <li><code>traffic_out/&lt;run&gt;/evidence_manifest.json</code></li>
-              <li><code>traffic_out/&lt;run&gt;/host_pass_runtime.json</code></li>
-              <li><code>traffic_out/&lt;run&gt;/host_fail_runtime.json</code></li>
+              <li><code>proof/evidence_manifest.latest.json</code></li>
+              <li><code>traffic_out/phase41_20260304T230327Z/evidence_manifest.json</code></li>
+              <li><code>traffic_out/phase41_20260304T230327Z/host_pass_runtime.json</code></li>
+              <li><code>traffic_out/phase41_20260304T230327Z/host_fail_runtime.json</code></li>
             </ul>
+            <p><strong>Signal:</strong> PASS runtime is extract-capable; FAIL runtime is capability-blocked.</p>
           </div>
         </div>
       </section>

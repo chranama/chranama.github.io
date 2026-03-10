@@ -65,11 +65,18 @@
         <div class="container">
           <h2 id="proof-title">Proof Artifacts</h2>
           <div class="card">
+            <p><strong>Claim:</strong> end-to-end data and ML pipeline reliability is evidenced with canonical model and test artifacts.</p>
+            <p><strong>Command:</strong> <code>python proof/validate_evidence_manifest.py</code></p>
+            <p><strong>Artifacts:</strong></p>
             <ul>
+              <li><a href="https://github.com/chranama/california-portugal-climate/blob/main/proof/evidence_manifest.latest.json">Canonical evidence manifest</a></li>
               <li><a href="https://github.com/chranama/california-portugal-climate/blob/main/models/baseline_rf_metrics.json">Baseline model metrics</a></li>
+              <li><a href="https://github.com/chranama/california-portugal-climate/blob/main/data/mart/predictions/baseline_rf_predictions.csv">Prediction sample</a></li>
               <li><a href="https://github.com/chranama/california-portugal-climate/blob/main/tests/test_anomaly_layer.py">Anomaly layer tests</a></li>
               <li><a href="https://github.com/chranama/california-portugal-climate/blob/main/tests/test_ml_features.py">ML feature integrity tests</a></li>
+              <li><a href="https://github.com/chranama/california-portugal-climate/blob/main/proof/test_summary.latest.json">Canonical test summary</a></li>
             </ul>
+            <p><strong>Signal:</strong> metrics, predictions, and test summary exist in canonical bundle and manifest validation passes.</p>
           </div>
         </div>
       </section>
