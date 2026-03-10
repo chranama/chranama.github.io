@@ -81,17 +81,6 @@
         </div>
       </section>
 
-      <section class="section" aria-labelledby="media-title">
-        <div class="container">
-          <h2 id="media-title">Visual Proof</h2>
-          <div class="card">
-            <p><img src="assets/media/climate-pipeline-architecture.png" alt="California-Portugal Climate Pipeline: ingestion through observability architecture diagram"></p>
-            <p><img src="assets/media/climate-baseline-metrics-panel.png" alt="California-Portugal Climate Pipeline: baseline metrics panel with class context"></p>
-            <p><img src="assets/media/climate-reliability-tests-panel.png" alt="California-Portugal Climate Pipeline: reliability test coverage panel"></p>
-          </div>
-        </div>
-      </section>
-
       <section class="section" aria-labelledby="verification-title">
         <div class="container">
           <h2 id="verification-title">5-Minute Reviewer Path</h2>
@@ -102,26 +91,6 @@
               <li>Inspect baseline metrics and tests linked above.</li>
             </ol>
             <p><strong>Last verified:</strong> March 6, 2026</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" aria-labelledby="lessons-title">
-        <div class="container">
-          <h2 id="lessons-title">Lessons Learned</h2>
-          <div class="card">
-            <ul>
-              <li>Reliable ML starts with reliable feature contracts: schema, non-null feature checks, and binary target validation must be tested.</li>
-              <li>Pipeline outputs need run-level observability metadata (freshness, row deltas, run mode), not just final model metrics.</li>
-              <li>Single-command orchestration with optional dbt/pytest gates improves repeatability and reduces environment-specific drift.</li>
-            </ul>
-            <p class="inline-links">
-              <a href="lessons-learned.html">Cross-project lessons</a>
-              <span aria-hidden="true">|</span>
-              <a href="https://github.com/chranama/california-portugal-climate/blob/main/src/climate_pipeline/observability/run_logger.py">Run logger implementation</a>
-              <span aria-hidden="true">|</span>
-              <a href="https://github.com/chranama/california-portugal-climate/blob/main/tests/test_ml_features.py">ML feature integrity tests</a>
-            </p>
           </div>
         </div>
       </section>

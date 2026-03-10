@@ -84,17 +84,6 @@
         </div>
       </section>
 
-      <section class="section" aria-labelledby="media-title">
-        <div class="container">
-          <h2 id="media-title">Visual Proof</h2>
-          <div class="card">
-            <p><img src="assets/media/llm-architecture-system.png" alt="LLM Extraction Platform: architecture flow from offline evaluation artifacts to runtime evidence"></p>
-            <p><img src="assets/media/llm-extract-gate-pass-fail.png" alt="LLM Extraction Platform: PASS and FAIL extract capability divergence"></p>
-            <p><img src="assets/media/llm-proof-contract.png" alt="LLM Extraction Platform: claim to command to artifact to signal proof contract panel"></p>
-          </div>
-        </div>
-      </section>
-
       <section class="section" aria-labelledby="verification-title">
         <div class="container">
           <h2 id="verification-title">5-10 Minute Reviewer Path</h2>
@@ -105,26 +94,6 @@
               <li>Inspect generated PASS/FAIL artifacts and evidence manifest.</li>
             </ol>
             <p><strong>Last verified:</strong> March 6, 2026</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" aria-labelledby="lessons-title">
-        <div class="container">
-          <h2 id="lessons-title">Lessons Learned</h2>
-          <div class="card">
-            <ul>
-              <li>Capability checks must be explicit runtime policy decisions, not implied by prompt quality or one-off demos.</li>
-              <li>PASS and FAIL paths need separate diagnostics: policy-blocked failures and model/runtime failures are different operational classes.</li>
-              <li>Strict CI lanes and reproducible local smoke scripts are required for trust when supporting multiple runtimes and profiles.</li>
-            </ul>
-            <p class="inline-links">
-              <a href="lessons-learned.html">Cross-project lessons</a>
-              <span aria-hidden="true">|</span>
-              <a href="https://github.com/chranama/llm-extraction-platform/blob/main/docs/10-model-decision-memo.md">Model decision memo</a>
-              <span aria-hidden="true">|</span>
-              <a href="https://github.com/chranama/llm-extraction-platform/blob/main/docs/09-ci-hardening.md">CI hardening notes</a>
-            </p>
           </div>
         </div>
       </section>
