@@ -81,6 +81,7 @@
               <li>Repository includes CI, integration coverage, and deployment diagnostics.</li>
             </ul>
             <p><strong>Proof point:</strong> Claim: extraction is capability-gated at runtime. Command: <code>python proof/validate_evidence_manifest.py</code>. Artifact: <code>proof/evidence_manifest.latest.json</code> with PASS/FAIL runtime outputs. Signal: PASS allows extraction, FAIL is blocked.</p>
+            <p><strong>Deployment proof:</strong> Claim: the same service is reproducibly deployable on Kubernetes. Command: <code>python proof/generate_canonical_manifest.py</code>. Artifact: <code>proof/artifacts/phase5_k8s_kind/</code>. Signal: local <code>kind</code> smoke passes and the production overlay renders cleanly.</p>
             <p class="inline-links">
               <a href="https://github.com/chranama/llm-extraction-platform">Repository</a>
               <span aria-hidden="true">|</span>
@@ -154,6 +155,7 @@
             <ul>
               <li><a href="proof-portfolio.html">Proof Portfolio: all reviewer commands + artifacts</a></li>
               <li><a href="lessons-learned.html">Lessons Learned: engineering decisions and tradeoffs</a></li>
+              <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/proof/artifacts/phase5_k8s_kind/kind_smoke_summary.json">Flagship Kubernetes proof summary</a></li>
               <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/.github/workflows/ci.yml">Flagship CI workflow</a></li>
               <li><a href="https://github.com/chranama/biollm-finetune/blob/main/README.md">BioLLM evaluation infrastructure</a></li>
               <li><a href="https://github.com/chranama/california-portugal-climate/blob/main/README.md">Climate platform architecture</a></li>

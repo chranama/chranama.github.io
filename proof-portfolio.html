@@ -38,9 +38,14 @@
             <p><strong>Command:</strong> <code>python proof/validate_evidence_manifest.py</code></p>
             <p><strong>Artifacts:</strong> <code>proof/evidence_manifest.latest.json</code>, <code>traffic_out/phase41_20260304T230327Z/host_pass_runtime.json</code>, <code>traffic_out/phase41_20260304T230327Z/host_fail_runtime.json</code></p>
             <p><strong>Signal:</strong> PASS runtime is extract-capable while FAIL runtime is capability-blocked.</p>
+            <p><strong>Claim:</strong> the service is reproducibly deployable on Kubernetes with a runnable local proof path.</p>
+            <p><strong>Command:</strong> <code>python proof/generate_canonical_manifest.py</code></p>
+            <p><strong>Artifacts:</strong> <code>proof/artifacts/phase5_k8s_kind/kind_smoke_summary.json</code>, <code>proof/artifacts/phase5_k8s_kind/k8s_smoke.log</code>, <code>proof/artifacts/phase5_k8s_kind/kustomize_local_generate_only.yaml</code>, <code>proof/artifacts/phase5_k8s_kind/kustomize_prod_gpu_full.yaml</code></p>
+            <p><strong>Signal:</strong> local <code>kind</code> deployment reaches ready state, generate-only runtime checks pass, and the production scaffold renders cleanly.</p>
             <ul>
               <li><a href="https://github.com/chranama/llm-extraction-platform#10-minute-reviewer-path">Reviewer path</a></li>
               <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/proof/evidence_manifest.latest.json">Canonical evidence manifest</a></li>
+              <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/proof/artifacts/phase5_k8s_kind/kind_smoke_summary.json">Kubernetes proof summary</a></li>
               <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/proof/proof_points.latest.md">Proof points summary</a></li>
               <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/docs/02-project-demos.md">Demo docs</a></li>
               <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/.github/workflows/ci.yml">CI workflow</a></li>

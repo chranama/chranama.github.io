@@ -80,6 +80,7 @@
               <li><code>traffic_out/phase41_20260304T230327Z/host_fail_runtime.json</code></li>
             </ul>
             <p><strong>Signal:</strong> PASS runtime is extract-capable; FAIL runtime is capability-blocked.</p>
+            <p><strong>Deployment extension:</strong> the same service now has a canonical Kubernetes proof path. Run <code>python proof/generate_canonical_manifest.py</code> to refresh <code>proof/artifacts/phase5_k8s_kind/</code>; the local <code>kind</code> deployment must pass smoke checks and the production overlay must render.</p>
           </div>
         </div>
       </section>
@@ -92,6 +93,7 @@
               <li>Open <a href="https://github.com/chranama/llm-extraction-platform#10-minute-reviewer-path">the reviewer path</a>.</li>
               <li>Run <code>scripts/demo_extract_gate/run_host_transformers.sh</code>.</li>
               <li>Inspect generated PASS/FAIL artifacts and evidence manifest.</li>
+              <li>For the deployment proof, inspect <a href="https://github.com/chranama/llm-extraction-platform/tree/main/proof/artifacts/phase5_k8s_kind"><code>proof/artifacts/phase5_k8s_kind/</code></a>.</li>
             </ol>
             <p><strong>Last verified:</strong> March 6, 2026</p>
           </div>
