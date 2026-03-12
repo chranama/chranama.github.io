@@ -81,6 +81,7 @@
             </ul>
             <p><strong>Signal:</strong> PASS runtime is extract-capable; FAIL runtime is capability-blocked.</p>
             <p><strong>Deployment extension:</strong> the same service now has a canonical Kubernetes proof path. Run <code>python proof/generate_canonical_manifest.py</code> to refresh <code>proof/artifacts/phase5_k8s_kind/</code>; the local <code>kind</code> deployment must pass smoke checks and the production overlay must render.</p>
+            <p><strong>Async extension:</strong> the same system now supports queued extraction through a separate worker process. Run <code>python proof/generate_canonical_manifest.py</code> to refresh <code>proof/artifacts/phase6_extract_async/</code>; the canonical signal is <code>202</code> submission, separate worker execution, and a final <code>succeeded</code> job result.</p>
           </div>
         </div>
       </section>
@@ -91,11 +92,11 @@
           <div class="card">
             <ol>
               <li>Open <a href="https://github.com/chranama/llm-extraction-platform#10-minute-reviewer-path">the reviewer path</a>.</li>
-              <li>Run <code>scripts/demo_extract_gate/run_host_transformers.sh</code>.</li>
-              <li>Inspect generated PASS/FAIL artifacts and evidence manifest.</li>
-              <li>For the deployment proof, inspect <a href="https://github.com/chranama/llm-extraction-platform/tree/main/proof/artifacts/phase5_k8s_kind"><code>proof/artifacts/phase5_k8s_kind/</code></a>.</li>
+              <li>Run <code>python proof/generate_canonical_manifest.py</code>.</li>
+              <li>Inspect PASS/FAIL gating artifacts in <a href="https://github.com/chranama/llm-extraction-platform/blob/main/proof/evidence_manifest.latest.json"><code>proof/evidence_manifest.latest.json</code></a>.</li>
+              <li>Inspect the Kubernetes proof in <a href="https://github.com/chranama/llm-extraction-platform/tree/main/proof/artifacts/phase5_k8s_kind"><code>proof/artifacts/phase5_k8s_kind/</code></a>.</li>
+              <li>Inspect the async extract proof in <a href="https://github.com/chranama/llm-extraction-platform/tree/main/proof/artifacts/phase6_extract_async"><code>proof/artifacts/phase6_extract_async/</code></a>.</li>
             </ol>
-            <p><strong>Last verified:</strong> March 6, 2026</p>
           </div>
         </div>
       </section>
