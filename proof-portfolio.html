@@ -46,11 +46,16 @@
             <p><strong>Command:</strong> <code>python proof/generate_canonical_manifest.py</code></p>
             <p><strong>Artifacts:</strong> <code>proof/artifacts/phase6_extract_async/async_submit_response.json</code>, <code>proof/artifacts/phase6_extract_async/async_job_initial.json</code>, <code>proof/artifacts/phase6_extract_async/async_job_final.json</code>, <code>proof/artifacts/phase6_extract_async/async_worker_log.txt</code>, <code>proof/artifacts/phase6_extract_async/async_job_summary.json</code></p>
             <p><strong>Signal:</strong> submit returns <code>202</code>, worker logs prove separate-process execution, and final job state is <code>succeeded</code> with a valid result object.</p>
+            <p><strong>Claim:</strong> sync and async requests can be inspected through ordered request timelines that correlate API submission, queueing, worker execution, and final status under one trace id.</p>
+            <p><strong>Command:</strong> <code>python proof/generate_canonical_manifest.py</code></p>
+            <p><strong>Artifacts:</strong> <code>proof/artifacts/phase7_trace_inspection/async_submit_response.json</code>, <code>proof/artifacts/phase7_trace_inspection/async_trace_detail.json</code>, <code>proof/artifacts/phase7_trace_inspection/async_trace_timeline.md</code>, <code>proof/artifacts/phase7_trace_inspection/sync_trace_detail.json</code>, <code>proof/artifacts/phase7_trace_inspection/trace_summary.json</code></p>
+            <p><strong>Signal:</strong> async trace detail proves cross-process lineage from submit to worker completion, and sync trace detail exposes the request lifecycle inside the API path.</p>
             <ul>
               <li><a href="https://github.com/chranama/llm-extraction-platform#10-minute-reviewer-path">Reviewer path</a></li>
               <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/proof/evidence_manifest.latest.json">Canonical evidence manifest</a></li>
               <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/proof/artifacts/phase5_k8s_kind/kind_smoke_summary.json">Kubernetes proof summary</a></li>
               <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/proof/artifacts/phase6_extract_async/async_job_summary.json">Async extract proof summary</a></li>
+              <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/proof/artifacts/phase7_trace_inspection/trace_summary.json">Trace inspection proof summary</a></li>
               <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/proof/proof_points.latest.md">Proof points summary</a></li>
               <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/docs/02-project-demos.md">Demo docs</a></li>
               <li><a href="https://github.com/chranama/llm-extraction-platform/blob/main/.github/workflows/ci.yml">CI workflow</a></li>

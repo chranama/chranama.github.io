@@ -55,7 +55,7 @@
             <ol>
               <li>
                 <strong>LLM Extraction Platform</strong>: runtime capability gate controlled by onboarding artifacts,
-                with deterministic PASS/FAIL evidence outputs, a runnable Kubernetes proof path, and async extraction jobs backed by a separate worker.
+                with deterministic PASS/FAIL evidence outputs, a runnable Kubernetes proof path, async extraction jobs backed by a separate worker, and traceable request inspection across API and worker boundaries.
                 <br>
                 Links: <a href="https://github.com/chranama/llm-extraction-platform">Repo</a> |
                 <a href="case-study-extract-gating.html">Case Study</a>
@@ -86,6 +86,7 @@
               <li>How API contract design (versioning, schemas, structured errors) improves reliability for AI features.</li>
               <li>How to package an inference service for Kubernetes with a local <code>kind</code> reviewer path and production-oriented scaffold.</li>
               <li>How to separate request submission from background execution with durable async job state and a dedicated worker.</li>
+              <li>How to add traceable request inspection for sync and async LLM workflows without requiring a full observability platform rollout.</li>
               <li>How to build reviewer-fast proof paths and evidence manifests that reduce ambiguity in system behavior.</li>
               <li>How to operationalize pipelines with tests, orchestration, and observability from day one.</li>
               <li>What to improve next 90 days: onboarding governance, regression taxonomy, and performance/cost reporting.</li>

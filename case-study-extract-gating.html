@@ -82,6 +82,7 @@
             <p><strong>Signal:</strong> PASS runtime is extract-capable; FAIL runtime is capability-blocked.</p>
             <p><strong>Deployment extension:</strong> the same service now has a canonical Kubernetes proof path. Run <code>python proof/generate_canonical_manifest.py</code> to refresh <code>proof/artifacts/phase5_k8s_kind/</code>; the local <code>kind</code> deployment must pass smoke checks and the production overlay must render.</p>
             <p><strong>Async extension:</strong> the same system now supports queued extraction through a separate worker process. Run <code>python proof/generate_canonical_manifest.py</code> to refresh <code>proof/artifacts/phase6_extract_async/</code>; the canonical signal is <code>202</code> submission, separate worker execution, and a final <code>succeeded</code> job result.</p>
+            <p><strong>Trace extension:</strong> the same system now supports traceable request inspection for both sync and async extraction. Run <code>python proof/generate_canonical_manifest.py</code> to refresh <code>proof/artifacts/phase7_trace_inspection/</code>; the canonical signal is a single trace id that links submit, queue, worker claim, execution, and final status.</p>
           </div>
         </div>
       </section>
@@ -96,6 +97,7 @@
               <li>Inspect PASS/FAIL gating artifacts in <a href="https://github.com/chranama/llm-extraction-platform/blob/main/proof/evidence_manifest.latest.json"><code>proof/evidence_manifest.latest.json</code></a>.</li>
               <li>Inspect the Kubernetes proof in <a href="https://github.com/chranama/llm-extraction-platform/tree/main/proof/artifacts/phase5_k8s_kind"><code>proof/artifacts/phase5_k8s_kind/</code></a>.</li>
               <li>Inspect the async extract proof in <a href="https://github.com/chranama/llm-extraction-platform/tree/main/proof/artifacts/phase6_extract_async"><code>proof/artifacts/phase6_extract_async/</code></a>.</li>
+              <li>Inspect the request-trace proof in <a href="https://github.com/chranama/llm-extraction-platform/tree/main/proof/artifacts/phase7_trace_inspection"><code>proof/artifacts/phase7_trace_inspection/</code></a>.</li>
             </ol>
           </div>
         </div>
