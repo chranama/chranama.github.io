@@ -37,7 +37,7 @@ let cards: [RepoCard] = [
 
 let width: CGFloat = 1200
 let height: CGFloat = 627
-let outDir = URL(fileURLWithPath: "/Users/chranama/portfolio/website/assets")
+let outDir = URL(fileURLWithPath: "/Users/chranama/career/website/assets")
 
 func saveCard(_ card: RepoCard) {
     let image = NSImage(size: NSSize(width: width, height: height))

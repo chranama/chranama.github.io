@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -140,15 +140,41 @@
         </div>
       </section>
 
+      <section class="section" aria-labelledby="currently-working-on-title">
+        <div class="container">
+          <h2 id="currently-working-on-title">Currently Working On</h2>
+          <article class="card project-card" aria-labelledby="project-inference-gateway-title">
+            <h3 id="project-inference-gateway-title">Inference Serving Gateway (Go, currently in active development)</h3>
+            <p>
+              I am currently learning Go by building inference-serving-gateway, a production-style edge gateway for inference backends.
+              I started this project to deepen the systems side of my AI engineering toolkit rather than learn the language in isolation.
+            </p>
+            <p>
+              The project focuses on request lifecycle handling, health and readiness semantics, timeouts, limits, forwarding, metrics,
+              and edge observability. It complements my Python-based LLM work by pushing further into the serving and runtime layers that
+              production AI systems depend on.
+            </p>
+            <ul>
+              <li>Build Go fluency through concrete HTTP service and middleware work.</li>
+              <li>Strengthen inference-serving and service-boundary judgment for AI backend and platform roles.</li>
+              <li>Expand from applied LLM systems into more infrastructure-shaped AI engineering work.</li>
+            </ul>
+            <p class="inline-links">
+              <a href="https://github.com/chranama/inference-serving-gateway">Repository (active development)</a>
+            </p>
+          </article>
+        </div>
+      </section>
+
       <section class="section" aria-labelledby="proof-title">
         <div class="container">
           <h2 id="proof-title">Proof and Evidence</h2>
           <div class="card">
-            <p class="proof-badge-row" aria-label="Proof characteristics">
+            <div class="proof-badge-row" aria-label="Proof characteristics" role="group">
               <span class="proof-badge">CI-Backed</span>
               <span class="proof-badge">Reproducible</span>
               <span class="proof-badge">Evidence-Linked</span>
-            </p>
+            </div>
             <p class="badge-row">
               <a href="https://github.com/chranama/chranama.github.io/actions/workflows/site-checks.yml">
                 <img src="https://github.com/chranama/chranama.github.io/actions/workflows/site-checks.yml/badge.svg" alt="Site checks workflow status badge">
@@ -170,13 +196,13 @@
 
       <section class="section" aria-labelledby="briefs-title">
         <div class="container">
-          <h2 id="briefs-title">One-Page Briefs and Downloads</h2>
+          <h2 id="briefs-title">One-Page Briefs</h2>
           <div class="card">
             <ul>
-              <li><a href="brief-llm-extraction-platform.html">LLM Extraction Platform one-page brief</a> (<a href="brief-llm-extraction-platform.pdf">PDF</a>)</li>
-              <li><a href="brief-biollm-finetune.html">BioLLM-Finetune one-page brief</a> (<a href="brief-biollm-finetune.pdf">PDF</a>)</li>
-              <li><a href="brief-climate-pipeline.html">California-Portugal Climate Pipeline one-page brief</a> (<a href="brief-climate-pipeline.pdf">PDF</a>)</li>
-              <li><a href="recruiter-brief.html">Recruiter packet page</a> (<a href="recruiter-brief.pdf">PDF</a>)</li>
+              <li><a href="brief-llm-extraction-platform.html">LLM Extraction Platform one-page brief</a></li>
+              <li><a href="brief-biollm-finetune.html">BioLLM-Finetune one-page brief</a></li>
+              <li><a href="brief-climate-pipeline.html">California-Portugal Climate Pipeline one-page brief</a></li>
+              <li><a href="recruiter-brief.html">Recruiter packet page</a></li>
             </ul>
           </div>
         </div>
@@ -189,6 +215,7 @@
             <p>
               I am a Data Science graduate focused on shipping practical AI services that can be reviewed quickly and trusted in operation.
               I prioritize explicit contracts, deterministic workflows, and evidence-first demonstrations.
+              I am also actively expanding my toolkit into Go and inference-serving infrastructure so I can take stronger ownership across the runtime and systems layers of AI products.
               I am currently seeking entry-level AI Engineer opportunities in backend, platform, and applied LLM infrastructure work.
             </p>
           </div>
@@ -213,6 +240,7 @@
               <h3>Backend and Platform</h3>
               <ul>
                 <li>Python, FastAPI, REST APIs</li>
+                <li>Go (currently building inference-serving-gateway)</li>
                 <li>CI/CD and integration testing</li>
                 <li>Data pipelines (dbt, Prefect)</li>
                 <li>DuckDB, Postgres, YAML configuration</li>

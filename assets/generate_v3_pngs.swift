@@ -23,7 +23,7 @@ let cards: [Card] = [
 
 let width: CGFloat = 1200
 let height: CGFloat = 627
-let outDir = URL(fileURLWithPath: "/Users/chranama/portfolio/website/assets")
+let outDir = URL(fileURLWithPath: "/Users/chranama/career/website/assets")
 
 func saveCard(_ card: Card) {
     let image = NSImage(size: NSSize(width: width, height: height))
