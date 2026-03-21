@@ -246,6 +246,12 @@ h3 {
   gap: var(--space-4);
 }
 
+.lesson-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
   padding: var(--space-4) 0;
@@ -259,6 +265,10 @@ h3 {
 
 @media (min-width: 48rem) {
   .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .lesson-grid {
     grid-template-columns: 1fr 1fr;
   }
 

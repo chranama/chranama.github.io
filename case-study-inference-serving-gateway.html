@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Case Study | Inference Serving Gateway</title>
+    <meta name="description" content="System-first case study for a Go inference gateway covering serving boundaries, runtime controls, request and trace propagation, and proof-backed edge behavior.">
+    <link rel="canonical" href="https://chranama.github.io/case-study-inference-serving-gateway.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Case Study: Inference Serving Gateway">
+    <meta property="og:description" content="Go edge service case study covering readiness, limits, timeouts, request identity, and proof-backed serving-boundary behavior.">
+    <meta property="og:url" content="https://chranama.github.io/case-study-inference-serving-gateway.html">
+    <meta property="og:image" content="https://chranama.github.io/assets/og-v3-repo-gateway.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Case Study: Inference Serving Gateway">
+    <meta name="twitter:description" content="Go edge service case study for serving boundaries and runtime controls in front of inference backends.">
+    <meta name="twitter:image" content="https://chranama.github.io/assets/og-v3-repo-gateway.png">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <div class="container">
+        <p class="kicker">Support Case Study</p>
+        <h1>Inference Serving Gateway</h1>
+        <p class="title">Serving Boundaries and Runtime Controls</p>
+        <p>
+          This case study covers the gateway as a backend/runtime system: request admission, readiness and health semantics,
+          limits, timeouts, forwarding, request identity continuity, and proof-backed edge behavior in front of inference backends.
+        </p>
+        <p><a class="button" href="index.html">Back to Portfolio</a></p>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="section" aria-labelledby="overview-title">
+        <div class="container">
+          <h2 id="overview-title">System Overview</h2>
+          <div class="card">
+            <p>
+              <code>inference-serving-gateway</code> is a Go edge service that fronts inference backends and owns gateway concerns:
+              request admission, timeout and cancellation handling, concurrency and rate controls, request and trace propagation,
+              readiness checks, structured edge errors, and observability surfaces.
+            </p>
+            <p>
+              The project is intentionally scoped around the service boundary rather than model semantics. Extraction semantics,
+              async job execution, and backend trace detail stay owned by <code>llm-extraction-platform</code>; the gateway owns
+              edge/runtime behavior in front of that backend.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="why-title">
+        <div class="container">
+          <h2 id="why-title">Why This System Matters</h2>
+          <div class="card">
+            <p>
+              Many AI projects prove application behavior but not the serving boundary in front of the application. This system
+              matters because real AI products often need an edge layer that can enforce limits, preserve request identity,
+              reflect upstream readiness, and translate upstream failures into gateway-owned runtime behavior.
+            </p>
+            <p>
+              As a case study, it is strongest for backend and platform hiring because it shows practical distributed-systems
+              judgment without overstating the scope: service boundaries, failure handling, HTTP contracts, and runtime controls
+              are treated as first-class engineering concerns.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="lead-proof-title">
+        <div class="container">
+          <h2 id="lead-proof-title">Lead Proof: Canonical Mock-Upstream Gateway Path</h2>
+          <div class="card">
+            <p>
+              The canonical <code>v1</code> proof path runs the gateway against a mock upstream and captures the full edge contract:
+              <code>/healthz</code>, <code>/readyz</code>, <code>/metrics</code>, sync forwarding, async submit, async status polling,
+              and request/trace identity continuity.
+            </p>
+            <ul>
+              <li>Run <code>proof/generate_mock_proof.sh</code>.</li>
+              <li>Inspect <code>proof/artifacts/mock_upstream/latest/summary.md</code> and <code>manifest.json</code> to confirm stable route behavior, readiness semantics, metrics exposure, and sync/async request identity continuity.</li>
+            </ul>
+            <p class="inline-links">
+              <a href="https://github.com/chranama/inference-serving-gateway/blob/main/proof/README.md">Proof docs</a>
+              <span aria-hidden="true">|</span>
+              <a href="https://github.com/chranama/inference-serving-gateway/blob/main/docs/architecture.md">Architecture notes</a>
+              <span aria-hidden="true">|</span>
+              <a href="https://github.com/chranama/inference-serving-gateway/blob/main/tests/gateway_integration_test.go">Gateway integration tests</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="supporting-proof-title">
+        <div class="container">
+          <h2 id="supporting-proof-title">Supporting Proof: Live Backend Compatibility</h2>
+          <div class="card">
+            <p>
+              The stronger follow-on proof is that the gateway contract is not only valid against a mock upstream, but also compatible
+              with the real <code>llm-extraction-platform</code> backend. The integration probe shows that request and trace continuity,
+              sync extract, async submit, and async status flows remain coherent across the split gateway/backend design.
+            </p>
+            <p>
+              This matters because it demonstrates that the gateway is not just a toy HTTP proxy. It preserves a real service boundary
+              while staying compatible with a separate backend that owns extraction semantics and job execution.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="verification-title">
+        <div class="container">
+          <h2 id="verification-title">5-Minute Reviewer Path</h2>
+          <div class="card">
+            <ol>
+              <li>Open the <a href="https://github.com/chranama/inference-serving-gateway#inference-serving-gateway"><code>README.md</code></a> for the service shape and route surface.</li>
+              <li>Run <code>proof/generate_mock_proof.sh</code>.</li>
+              <li>Inspect <a href="https://github.com/chranama/inference-serving-gateway/blob/main/proof/README.md">proof docs</a> plus the generated mock-upstream summary and manifest artifacts.</li>
+              <li>If you want the deeper boundary story, read <a href="https://github.com/chranama/inference-serving-gateway/blob/main/docs/v1-rollout-plan.md">the rollout plan</a> and the live-backend integration script.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <p>Last updated: <span data-last-updated></span></p>
+        <p>
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">|</span>
+          <a href="recruiter-brief.html">Recruiter Brief</a>
+        </p>
+      </div>
+    </footer>
+      <script>
+      (function () {
+        var items = document.querySelectorAll('[data-last-updated]');
+        if (!items.length) return;
+        var modified = new Date(document.lastModified);
+        if (Number.isNaN(modified.getTime())) {
+          items.forEach(function (item) {
+            item.textContent = 'Unknown';
+          });
+          return;
+        }
+        var formatted = new Intl.DateTimeFormat('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        }).format(modified);
+        items.forEach(function (item) {
+          item.textContent = formatted;
+        });
+      })();
+    </script>
+  </body>
+</html>

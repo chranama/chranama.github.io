@@ -5,11 +5,13 @@ Static GitHub Pages portfolio site.
 ## Routes
 
 - `/` -> recruiter landing page
-- `/case-study-extract-gating.html` -> LLM Extraction Platform case study
+- `/case-study-llm-extraction-platform.html` -> LLM Extraction Platform flagship case study
+- `/case-study-extract-gating.html` -> redirect to the flagship LLM Extraction Platform case study
+- `/case-study-inference-serving-gateway.html` -> Inference Serving Gateway case study
 - `/case-study-biollm-robustness.html` -> BioLLM case study
 - `/case-study-climate-anomaly-pipeline.html` -> Climate pipeline case study
-- `/proof-portfolio.html` -> consolidated proof links and reviewer commands
 - `/recruiter-brief.html` -> recruiter packet page
+- `/lessons-learned.html` -> cross-project engineering judgment page
 - `/brief-llm-extraction-platform.html` -> one-page flagship brief
 - `/brief-biollm-finetune.html` -> one-page BioLLM brief
 - `/brief-climate-pipeline.html` -> one-page climate brief
@@ -19,11 +21,13 @@ Static GitHub Pages portfolio site.
 ## Local Files
 
 - `index.html`
+- `case-study-llm-extraction-platform.html`
 - `case-study-extract-gating.html`
+- `case-study-inference-serving-gateway.html`
 - `case-study-biollm-robustness.html`
 - `case-study-climate-anomaly-pipeline.html`
-- `proof-portfolio.html`
 - `recruiter-brief.html`
+- `lessons-learned.html`
 - `css/styles.css`
 - `assets/favicon.svg`
 - `assets/og-home-v2.svg`
@@ -36,7 +40,7 @@ Static GitHub Pages portfolio site.
 
 ## Launch checklist
 
-1. Replace `resume.pdf` with your final exported version from `website/resume.docx`.
+1. Replace `resume.pdf` with your final exported version from the local resume build output.
 2. Ensure `masters_thesis.pdf` is present and current.
 3. Confirm hero/contact links and proof links in `index.html` are exact.
 4. Push to `main`.

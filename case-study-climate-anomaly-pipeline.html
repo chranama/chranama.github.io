@@ -23,52 +23,60 @@
     <header class="site-header">
       <div class="container">
         <p class="kicker">Support Case Study</p>
-        <h1>Climate Data + ML Platform</h1>
-        <p class="title">California-Portugal Climate Pipeline</p>
+        <h1>California-Portugal Climate Pipeline</h1>
+        <p class="title">Data and ML Platform Reliability</p>
         <p>
-          This case study demonstrates end-to-end platform engineering for data and ML workloads:
-          ingestion, transformations, orchestration, tested features, and baseline model outputs.
+          This case study covers the project as a data and ML system: ingestion, warehouse transforms, orchestration,
+          tested feature pipelines, and reproducible baseline model outputs.
         </p>
         <p><a class="button" href="index.html">Back to Portfolio</a></p>
       </div>
     </header>
 
     <main id="main-content">
-      <section class="section" aria-labelledby="problem-title">
+      <section class="section" aria-labelledby="overview-title">
         <div class="container">
-          <h2 id="problem-title">Problem</h2>
+          <h2 id="overview-title">System Overview</h2>
           <div class="card">
             <p>
-              ML projects often stop at notebooks. Reliable systems require repeatable data ingestion,
-              validated transformations, orchestration, and tested feature pipelines feeding model training.
+              <code>california-portugal-climate</code> is an end-to-end data and ML platform spanning ingestion, DuckDB storage,
+              dbt-modeled transforms, Prefect orchestration, tested anomaly features, and baseline forecasting outputs.
+            </p>
+            <p>
+              The system is strongest as a support case study for platform work because it shows that the portfolio includes
+              repeatable data workflows and not only AI application APIs. It treats transforms, tests, orchestration, and model outputs
+              as one operational chain.
             </p>
           </div>
         </div>
       </section>
 
-      <section class="section" aria-labelledby="approach-title">
+      <section class="section" aria-labelledby="why-title">
         <div class="container">
-          <h2 id="approach-title">Approach</h2>
+          <h2 id="why-title">Why This System Matters</h2>
           <div class="card">
-            <ul>
-              <li>Daily climate ingestion and normalization into DuckDB.</li>
-              <li>Layered dbt models (landing, clean, anomaly, ML features).</li>
-              <li>Prefect orchestration for daily and backfill runs.</li>
-              <li>Baseline RandomForest anomaly prediction with stored metrics.</li>
-              <li>Automated tests for transform logic, observability tables, and feature integrity.</li>
-            </ul>
+            <p>
+              Many ML projects stop at notebooks and isolated training code. Reliable systems need repeatable ingestion, validated
+              transformations, orchestration, tested feature logic, and model outputs that can be inspected as part of an operational workflow.
+            </p>
+            <p>
+              This project matters because it ties those pieces together in one system. It demonstrates how warehouse logic, pipeline
+              orchestration, model artifacts, and test surfaces can reinforce each other instead of living in separate, fragile scripts.
+            </p>
           </div>
         </div>
       </section>
 
       <section class="section" aria-labelledby="proof-title">
         <div class="container">
-          <h2 id="proof-title">Proof Artifacts</h2>
+          <h2 id="proof-title">Lead Proof: Canonical Data and Model Bundle</h2>
           <div class="card">
-            <p><strong>Claim:</strong> end-to-end data and ML pipeline reliability is evidenced with canonical model and test artifacts.</p>
-            <p><strong>Command:</strong> <code>python proof/validate_evidence_manifest.py</code></p>
-            <p><strong>Artifacts:</strong></p>
+            <p>
+              The lead proof is that end-to-end data and ML pipeline reliability is evidenced through a canonical bundle of metrics,
+              prediction samples, and tests rather than a vague statement that the pipeline works.
+            </p>
             <ul>
+              <li>Run <code>python proof/validate_evidence_manifest.py</code>.</li>
               <li><a href="https://github.com/chranama/california-portugal-climate/blob/main/proof/evidence_manifest.latest.json">Canonical evidence manifest</a></li>
               <li><a href="https://github.com/chranama/california-portugal-climate/blob/main/models/baseline_rf_metrics.json">Baseline model metrics</a></li>
               <li><a href="https://github.com/chranama/california-portugal-climate/blob/main/data/mart/predictions/baseline_rf_predictions.csv">Prediction sample</a></li>
@@ -76,7 +84,10 @@
               <li><a href="https://github.com/chranama/california-portugal-climate/blob/main/tests/test_ml_features.py">ML feature integrity tests</a></li>
               <li><a href="https://github.com/chranama/california-portugal-climate/blob/main/proof/test_summary.latest.json">Canonical test summary</a></li>
             </ul>
-            <p><strong>Signal:</strong> metrics, predictions, and test summary exist in canonical bundle and manifest validation passes.</p>
+            <p>
+              The key signal is that metrics, predictions, and the test summary all exist inside the canonical bundle and the manifest
+              validation step passes cleanly.
+            </p>
           </div>
         </div>
       </section>
@@ -102,7 +113,7 @@
         <p>
           <a href="index.html">Home</a>
           <span aria-hidden="true">|</span>
-          <a href="proof-portfolio.html">Proof Portfolio</a>
+          <a href="recruiter-brief.html">Recruiter Brief</a>
         </p>
       </div>
     </footer>

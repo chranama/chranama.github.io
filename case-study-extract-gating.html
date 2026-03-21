@@ -2,138 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Case Study | Extract Capability Gating (LLM Extraction Platform)</title>
-    <meta name="description" content="How eval artifacts and runtime policy gates prevent unsupported extraction behavior in a production-style LLM API system.">
-    <link rel="canonical" href="https://chranama.github.io/case-study-extract-gating.html">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Case Study: Extract Capability Gating in LLM Extraction Platform">
-    <meta property="og:description" content="Offline onboarding evidence toggles runtime extraction capability, verified by deterministic PASS/FAIL artifacts.">
-    <meta property="og:url" content="https://chranama.github.io/case-study-extract-gating.html">
-    <meta property="og:image" content="https://chranama.github.io/assets/og-extract-gate.svg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Case Study: Extract Capability Gating in LLM Extraction Platform">
-    <meta name="twitter:description" content="Evidence-first walkthrough of policy-gated extraction behavior.">
-    <meta name="twitter:image" content="https://chranama.github.io/assets/og-extract-gate.svg">
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="css/styles.css">
+    <meta http-equiv="refresh" content="0; url=case-study-llm-extraction-platform.html">
+    <link rel="canonical" href="https://chranama.github.io/case-study-llm-extraction-platform.html">
+    <title>Redirecting to LLM Extraction Platform Case Study</title>
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-    <header class="site-header">
-      <div class="container">
-        <p class="kicker">Flagship Case Study</p>
-        <h1>Extract Capability Gating</h1>
-        <p class="title">LLM Extraction Platform</p>
-        <p>
-          This case study shows how model capability onboarding and runtime policy enforcement prevent unsupported
-          extraction behavior and produce reviewer-friendly evidence artifacts.
-        </p>
-        <p><a class="button" href="index.html">Back to Portfolio</a></p>
-      </div>
-    </header>
-
-    <main id="main-content">
-      <section class="section" aria-labelledby="problem-title">
-        <div class="container">
-          <h2 id="problem-title">Problem</h2>
-          <div class="card">
-            <p>
-              Extraction endpoints can appear to work even when a model is not properly onboarded for schema-constrained output.
-              This introduces reliability risk: invalid output structure, brittle behavior, and unclear operator confidence.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" aria-labelledby="approach-title">
-        <div class="container">
-          <h2 id="approach-title">Approach</h2>
-          <div class="card">
-            <ul>
-              <li>Offline onboarding/evaluation artifacts set extraction capability in patched model manifests.</li>
-              <li>Runtime policy checks capability before serving extraction requests.</li>
-              <li>Demo scripts execute PASS and FAIL flows and write deterministic evidence manifests.</li>
-            </ul>
-            <p class="inline-links">
-              <a href="https://github.com/chranama/llm-extraction-platform/blob/main/docs/02-project-demos.md">Project demos</a>
-              <span aria-hidden="true">|</span>
-              <a href="https://github.com/chranama/llm-extraction-platform/blob/main/policy/README.md">Policy docs</a>
-              <span aria-hidden="true">|</span>
-              <a href="https://github.com/chranama/llm-extraction-platform/blob/main/server/README.md">Server docs</a>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" aria-labelledby="proof-title">
-        <div class="container">
-          <h2 id="proof-title">Proof Artifacts</h2>
-          <div class="card">
-            <p><strong>Claim:</strong> extraction behavior is governed by capability policy and verified with deterministic artifacts.</p>
-            <p><strong>Command:</strong> <code>python proof/validate_evidence_manifest.py</code></p>
-            <p><strong>Artifacts:</strong></p>
-            <ul>
-              <li><code>proof/evidence_manifest.latest.json</code></li>
-              <li><code>traffic_out/phase41_20260304T230327Z/evidence_manifest.json</code></li>
-              <li><code>traffic_out/phase41_20260304T230327Z/host_pass_runtime.json</code></li>
-              <li><code>traffic_out/phase41_20260304T230327Z/host_fail_runtime.json</code></li>
-            </ul>
-            <p><strong>Signal:</strong> PASS runtime is extract-capable; FAIL runtime is capability-blocked.</p>
-            <p><strong>Deployment extension:</strong> the same service now has a canonical Kubernetes proof path. Run <code>python proof/generate_canonical_manifest.py</code> to refresh <code>proof/artifacts/phase5_k8s_kind/</code>; the local <code>kind</code> deployment must pass smoke checks and the production overlay must render.</p>
-            <p><strong>Async extension:</strong> the same system now supports queued extraction through a separate worker process. Run <code>python proof/generate_canonical_manifest.py</code> to refresh <code>proof/artifacts/phase6_extract_async/</code>; the canonical signal is <code>202</code> submission, separate worker execution, and a final <code>succeeded</code> job result.</p>
-            <p><strong>Trace extension:</strong> the same system now supports traceable request inspection for both sync and async extraction. Run <code>python proof/generate_canonical_manifest.py</code> to refresh <code>proof/artifacts/phase7_trace_inspection/</code>; the canonical signal is a single trace id that links submit, queue, worker claim, execution, and final status.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" aria-labelledby="verification-title">
-        <div class="container">
-          <h2 id="verification-title">5-10 Minute Reviewer Path</h2>
-          <div class="card">
-            <ol>
-              <li>Open <a href="https://github.com/chranama/llm-extraction-platform#10-minute-reviewer-path">the reviewer path</a>.</li>
-              <li>Run <code>python proof/generate_canonical_manifest.py</code>.</li>
-              <li>Inspect PASS/FAIL gating artifacts in <a href="https://github.com/chranama/llm-extraction-platform/blob/main/proof/evidence_manifest.latest.json"><code>proof/evidence_manifest.latest.json</code></a>.</li>
-              <li>Inspect the Kubernetes proof in <a href="https://github.com/chranama/llm-extraction-platform/tree/main/proof/artifacts/phase5_k8s_kind"><code>proof/artifacts/phase5_k8s_kind/</code></a>.</li>
-              <li>Inspect the async extract proof in <a href="https://github.com/chranama/llm-extraction-platform/tree/main/proof/artifacts/phase6_extract_async"><code>proof/artifacts/phase6_extract_async/</code></a>.</li>
-              <li>Inspect the request-trace proof in <a href="https://github.com/chranama/llm-extraction-platform/tree/main/proof/artifacts/phase7_trace_inspection"><code>proof/artifacts/phase7_trace_inspection/</code></a>.</li>
-            </ol>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-row">
-        <p>Last updated: <span data-last-updated></span></p>
-        <p>
-          <a href="index.html">Home</a>
-          <span aria-hidden="true">|</span>
-          <a href="proof-portfolio.html">Proof Portfolio</a>
-        </p>
-      </div>
-    </footer>
-      <script>
-      (function () {
-        var items = document.querySelectorAll('[data-last-updated]');
-        if (!items.length) return;
-        var modified = new Date(document.lastModified);
-        if (Number.isNaN(modified.getTime())) {
-          items.forEach(function (item) {
-            item.textContent = 'Unknown';
-          });
-          return;
-        }
-        var formatted = new Intl.DateTimeFormat('en-US', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric'
-        }).format(modified);
-        items.forEach(function (item) {
-          item.textContent = formatted;
-        });
-      })();
-    </script>
+    <p>
+      This case study has moved to
+      <a href="case-study-llm-extraction-platform.html">LLM Extraction Platform: Runtime Controls and Operational Proof</a>.
+    </p>
   </body>
 </html>

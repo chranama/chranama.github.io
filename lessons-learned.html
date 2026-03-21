@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lessons Learned | Christopher Anaya</title>
-    <meta name="description" content="Cross-project lessons learned from LLM backend/platform engineering, robustness research, and climate ML pipeline operations.">
+    <title>Engineering Judgment | Christopher Anaya</title>
+    <meta name="description" content="Cross-project engineering judgment from backend AI systems, evaluation infrastructure, serving boundaries, and data/ML platform work.">
     <link rel="canonical" href="https://chranama.github.io/lessons-learned.html">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Lessons Learned | Christopher Anaya">
-    <meta property="og:description" content="Engineering lessons and decisions backed by proof artifacts across all portfolio projects.">
+    <meta property="og:title" content="Engineering Judgment | Christopher Anaya">
+    <meta property="og:description" content="Cross-project lessons that shape how Christopher Anaya designs APIs, evaluation systems, and operational controls.">
     <meta property="og:url" content="https://chranama.github.io/lessons-learned.html">
     <meta property="og:image" content="https://chranama.github.io/assets/og-home-v2.svg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Lessons Learned | Christopher Anaya">
-    <meta name="twitter:description" content="What worked, what failed, and what changed in production-style AI systems work.">
+    <meta name="twitter:title" content="Engineering Judgment | Christopher Anaya">
+    <meta name="twitter:description" content="Cross-project lessons from backend AI systems, evaluation infrastructure, and operational controls.">
     <meta name="twitter:image" content="https://chranama.github.io/assets/og-home-v2.svg">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/styles.css">
@@ -23,100 +23,189 @@
     <header class="site-header">
       <div class="container">
         <p class="kicker">Lessons Learned</p>
-        <h1>Engineering Lessons Across Portfolio Projects</h1>
-        <p class="title">Context -&gt; Lesson -&gt; Decision -&gt; Evidence</p>
+        <h1>Engineering Judgment Across Systems</h1>
+        <p class="title">How repeated system work changed the way I design APIs, evaluation flows, and operational controls.</p>
+        <p>
+          The most useful lessons in this portfolio did not come from one project in isolation. They emerged from seeing similar
+          reliability, evaluation, and operational problems recur across backend AI systems, serving boundaries, and data/ML workflows.
+        </p>
         <p><a class="button" href="index.html">Back to Portfolio</a></p>
       </div>
     </header>
 
     <main id="main-content">
-      <section class="section" aria-labelledby="llm-lessons-title">
+      <section class="section" aria-labelledby="intro-title">
         <div class="container">
-          <h2 id="llm-lessons-title">LLM Extraction Platform</h2>
+          <h2 id="intro-title">Cross-Project Perspective</h2>
           <div class="card">
-            <ol>
-              <li>
-                <strong>Context:</strong> extraction can appear to work on unsupported models.
-                <br><strong>Lesson:</strong> prompt-level behavior is not enough for reliability guarantees.
-                <br><strong>Decision:</strong> enforce capability at runtime through policy gating.
-                <br><strong>Evidence:</strong> <code>proof/evidence_manifest.latest.json</code>, PASS/FAIL runtime outputs in <code>traffic_out/...</code>.
-              </li>
-              <li>
-                <strong>Context:</strong> PASS and FAIL paths can fail for different reasons (policy block vs runtime/model load issues).
-                <br><strong>Lesson:</strong> failure mode classification matters as much as pass/fail status.
-                <br><strong>Decision:</strong> preserve runtime probes and manifests so capability guardrail failures are distinguishable from runtime failures.
-                <br><strong>Evidence:</strong> model decision memo + <code>host_pass_extract.json</code>/<code>host_fail_extract.json</code> artifacts.
-              </li>
-              <li>
-                <strong>Context:</strong> multi-runtime, multi-lane CI can create confidence gaps if checks are weak or non-reproducible.
-                <br><strong>Lesson:</strong> portfolio credibility depends on strict quality lanes and local reproducibility.
-                <br><strong>Decision:</strong> enforce no-noop core checks, compact failure artifact bundles, and deterministic local CI smoke matrix.
-                <br><strong>Evidence:</strong> CI hardening doc + <code>scripts/ci_smoke_matrix.sh</code> + required core test lanes.
-              </li>
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" aria-labelledby="biollm-lessons-title">
-        <div class="container">
-          <h2 id="biollm-lessons-title">BioLLM-Finetune (Thesis-Derived)</h2>
-          <div class="card">
-            <ol>
-              <li>
-                <strong>Context:</strong> thesis BioASQ results were uneven by question type (yes/no strongest, factoid/list weakest).
-                <br><strong>Lesson:</strong> one aggregate score hides the real failure modes of generative biomedical QA.
-                <br><strong>Decision:</strong> evaluate by type and metric, then add explicit robustness slices (phenotype and perturbation views).
-                <br><strong>Evidence:</strong> thesis Results chapter reports yes/no peak accuracy of 64.0% (Macro-F1 0.5486), factoid strict accuracy up to 15.8%, and near-zero list scores.
-              </li>
-              <li>
-                <strong>Context:</strong> formatting and schema mismatches caused large evaluation penalties even when answers were semantically close.
-                <br><strong>Lesson:</strong> output contracts and post-processing are core system components, not cosmetic cleanup.
-                <br><strong>Decision:</strong> enforce structured output normalization and retain deterministic evidence artifacts for verification.
-                <br><strong>Evidence:</strong> thesis sections on error analysis + post-processing impact, plus canonical artifacts in <code>proof/evidence_manifest.latest.json</code>.
-              </li>
-              <li>
-                <strong>Context:</strong> high-capability systems still had factual grounding limits in closed-book generation.
-                <br><strong>Lesson:</strong> reliability requires retrieval/knowledge grounding and richer evaluation, not just stronger prompting.
-                <br><strong>Decision:</strong> roadmap emphasizes RAG, ontology-informed validation, and human-in-the-loop quality assessment.
-                <br><strong>Evidence:</strong> thesis Conclusion and Future Work chapter + current reproducibility pipeline in the repo.
-              </li>
-            </ol>
-            <p class="inline-links">
-              <a href="masters_thesis.pdf">Master's Thesis (PDF)</a>
-              <span aria-hidden="true">|</span>
-              <a href="https://github.com/chranama/biollm-finetune/blob/main/docs/results_and_discussion.md">Results and Discussion</a>
-              <span aria-hidden="true">|</span>
-              <a href="https://github.com/chranama/biollm-finetune/blob/main/docs/limitations_and_future_work.md">Limitations and Future Work</a>
+            <p>
+              Similar pressures kept recurring across very different systems, and they pushed me toward the same design habits:
+              explicit runtime controls, deterministic evidence, clearer failure classification, and stronger operational visibility.
+            </p>
+            <p>
+              What follows is the synthesis layer: the lessons that now shape how I think and build, with the individual case studies
+              sitting underneath as the concrete source material.
             </p>
           </div>
         </div>
       </section>
 
-      <section class="section" aria-labelledby="climate-lessons-title">
+      <section class="section" aria-labelledby="core-lessons-title">
         <div class="container">
-          <h2 id="climate-lessons-title">California-Portugal Climate Pipeline</h2>
+          <h2 id="core-lessons-title">Core Lessons</h2>
+          <div class="lesson-grid">
+            <article class="card lesson-card">
+              <h3>Runtime Controls Beat Assumptions</h3>
+              <p>
+                Systems become fragile when they rely on implied model behavior, happy-path upstream responses, or prompt-level expectations.
+                Extraction can appear to work on unsupported models, and edge services can appear healthy while masking upstream problems.
+              </p>
+              <p>
+                That is why I now default toward capability gating, readiness checks, explicit limits, timeout budgets, and structured
+                edge-owned behavior instead of trusting nominal success states.
+              </p>
+              <p class="inline-links">
+                Seen in:
+                <a href="case-study-llm-extraction-platform.html">LLM Extraction Platform</a>
+                <span aria-hidden="true">|</span>
+                <a href="case-study-inference-serving-gateway.html">Inference Serving Gateway</a>
+              </p>
+            </article>
+
+            <article class="card lesson-card">
+              <h3>Reproducibility Is A System Feature</h3>
+              <p>
+                One-off success is weak evidence. Across evaluation work, CI, and data pipelines, the most credible systems were the ones
+                that could regenerate the same claim through deterministic artifacts, repeatable runs, or test-backed checks.
+              </p>
+              <p>
+                That pushes me toward canonical manifests, seed-controlled experiments, persisted outputs, compact proof bundles, and
+                local run paths that match the published story.
+              </p>
+              <p class="inline-links">
+                Seen in:
+                <a href="case-study-llm-extraction-platform.html">LLM Extraction Platform</a>
+                <span aria-hidden="true">|</span>
+                <a href="case-study-biollm-robustness.html">BioLLM-Finetune</a>
+                <span aria-hidden="true">|</span>
+                <a href="case-study-climate-anomaly-pipeline.html">Climate Pipeline</a>
+              </p>
+            </article>
+
+            <article class="card lesson-card">
+              <h3>Failure Classification Matters As Much As Pass/Fail</h3>
+              <p>
+                Aggregate scores and generic failures hide the real behavior. PASS and FAIL paths can fail for different reasons, benchmark
+                averages can hide type-specific weaknesses, and model metrics can become misleading when feature integrity drifts.
+              </p>
+              <p>
+                That is why I now prefer segmented evaluation views, distinct error classes, and explicit schema or feature integrity
+                checks before treating a result as trustworthy.
+              </p>
+              <p class="inline-links">
+                Seen in:
+                <a href="case-study-llm-extraction-platform.html">LLM Extraction Platform</a>
+                <span aria-hidden="true">|</span>
+                <a href="case-study-biollm-robustness.html">BioLLM-Finetune</a>
+                <span aria-hidden="true">|</span>
+                <a href="case-study-climate-anomaly-pipeline.html">Climate Pipeline</a>
+              </p>
+            </article>
+
+            <article class="card lesson-card">
+              <h3>Observability Is Part Of Reliability</h3>
+              <p>
+                Systems get harder to trust when request lineage, run metadata, freshness, or execution context disappear exactly when work
+                crosses a boundary. That applies to API-to-worker flows, gateway-to-backend boundaries, and scheduled data pipelines alike.
+              </p>
+              <p>
+                I now treat trace continuity, run logging, metrics, and operational summaries as part of the product surface, not as a
+                post-hoc instrumentation layer.
+              </p>
+              <p class="inline-links">
+                Seen in:
+                <a href="case-study-llm-extraction-platform.html">LLM Extraction Platform</a>
+                <span aria-hidden="true">|</span>
+                <a href="case-study-inference-serving-gateway.html">Inference Serving Gateway</a>
+                <span aria-hidden="true">|</span>
+                <a href="case-study-climate-anomaly-pipeline.html">Climate Pipeline</a>
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="decision-patterns-title">
+        <div class="container">
+          <h2 id="decision-patterns-title">How These Lessons Change My Design Decisions</h2>
           <div class="card">
-            <ol>
-              <li>
-                <strong>Context:</strong> notebook-first ML work breaks down during repeated runs.
-                <br><strong>Lesson:</strong> orchestration and layer contracts are non-optional for reliability.
-                <br><strong>Decision:</strong> use dbt layered models + Prefect workflows + persisted run outputs.
-                <br><strong>Evidence:</strong> <code>src/climate_pipeline/orchestration/prefect_flow.py</code>, dbt model layers, canonical manifest.
-              </li>
-              <li>
-                <strong>Context:</strong> baseline model metrics are misleading when feature tables drift or null handling changes.
-                <br><strong>Lesson:</strong> schema/feature integrity checks must gate model trust.
-                <br><strong>Decision:</strong> test required feature columns, target binary constraints, and no-NaN guarantees before treating metrics as valid.
-                <br><strong>Evidence:</strong> <code>tests/test_ml_features.py</code> and anomaly-layer schema tests.
-              </li>
-              <li>
-                <strong>Context:</strong> pipeline freshness and model quality degrade silently without run-level observability.
-                <br><strong>Lesson:</strong> operational metadata (deltas, freshness, run mode) is part of ML reliability proof.
-                <br><strong>Decision:</strong> log pipeline run records and ML metrics to warehouse observability tables and assert them in tests.
-                <br><strong>Evidence:</strong> <code>src/climate_pipeline/observability/run_logger.py</code>, <code>tests/test_observability_models.py</code>, <code>tests/test_ml_training_smoke.py</code>.
-              </li>
-            </ol>
+            <p>
+              At the API boundary, I prefer explicit contracts and runtime-owned controls over implied behavior. That means structured
+              request and response shapes, capability checks, clearer error classes, and edge semantics that are visible instead of assumed.
+            </p>
+            <p>
+              At the system level, I prefer proof paths that connect a claim to one small set of artifacts or tests. If a behavior matters,
+              I want a reviewer-fast way to validate it instead of relying on a long verbal explanation.
+            </p>
+            <p>
+              Operationally, I assume that trace continuity, readiness, freshness, and run metadata are part of the reliability story.
+              I do not treat them as optional polish after the “real” feature is built.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="source-projects-title">
+        <div class="container">
+          <h2 id="source-projects-title">Source Projects</h2>
+          <div class="lesson-grid">
+            <article class="card lesson-card">
+              <h3>LLM Extraction Platform</h3>
+              <p>
+                Flagship backend AI system and the strongest source for runtime controls, async execution, Kubernetes proof, and trace inspection.
+              </p>
+              <p class="inline-links">
+                <a href="case-study-llm-extraction-platform.html">Case Study</a>
+                <span aria-hidden="true">|</span>
+                <a href="https://github.com/chranama/llm-extraction-platform">Repository</a>
+              </p>
+            </article>
+
+            <article class="card lesson-card">
+              <h3>Inference Serving Gateway</h3>
+              <p>
+                Go edge service and the strongest source for service-boundary reasoning, limits, readiness, request identity, and structured edge errors.
+              </p>
+              <p class="inline-links">
+                <a href="case-study-inference-serving-gateway.html">Case Study</a>
+                <span aria-hidden="true">|</span>
+                <a href="https://github.com/chranama/inference-serving-gateway">Repository</a>
+              </p>
+            </article>
+
+            <article class="card lesson-card">
+              <h3>BioLLM-Finetune</h3>
+              <p>
+                Evaluation infrastructure and the strongest source for segmented robustness reasoning, reproducible experiment design, and thesis-linked lessons.
+              </p>
+              <p class="inline-links">
+                <a href="case-study-biollm-robustness.html">Case Study</a>
+                <span aria-hidden="true">|</span>
+                <a href="masters_thesis.pdf">Master's Thesis</a>
+              </p>
+            </article>
+
+            <article class="card lesson-card">
+              <h3>California-Portugal Climate Pipeline</h3>
+              <p>
+                Data and ML platform system and the strongest source for orchestration, tested transformations, feature integrity, and operational metadata.
+              </p>
+              <p class="inline-links">
+                <a href="case-study-climate-anomaly-pipeline.html">Case Study</a>
+                <span aria-hidden="true">|</span>
+                <a href="https://github.com/chranama/california-portugal-climate">Repository</a>
+              </p>
+            </article>
           </div>
         </div>
       </section>
@@ -127,8 +216,6 @@
         <p>Last updated: <span data-last-updated></span></p>
         <p>
           <a href="index.html">Home</a>
-          <span aria-hidden="true">|</span>
-          <a href="proof-portfolio.html">Proof Portfolio</a>
           <span aria-hidden="true">|</span>
           <a href="recruiter-brief.html">Recruiter Brief</a>
         </p>

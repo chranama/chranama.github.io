@@ -14,6 +14,16 @@ struct RepoCard {
 
 let cards: [RepoCard] = [
     RepoCard(
+        filename: "og-v3-repo-gateway.png",
+        bg: NSColor(calibratedRed: 0.03, green: 0.09, blue: 0.12, alpha: 1),
+        panel: NSColor(calibratedRed: 0.05, green: 0.13, blue: 0.17, alpha: 1),
+        stroke: NSColor(calibratedRed: 0.14, green: 0.73, blue: 0.82, alpha: 1),
+        accent: NSColor(calibratedRed: 0.50, green: 0.91, blue: 0.96, alpha: 1),
+        title: "Inference Serving",
+        subtitle: "Gateway",
+        motif: "GO"
+    ),
+    RepoCard(
         filename: "og-v3-repo-biollm.png",
         bg: NSColor(calibratedRed: 0.05, green: 0.11, blue: 0.09, alpha: 1),
         panel: NSColor(calibratedRed: 0.07, green: 0.16, blue: 0.12, alpha: 1),

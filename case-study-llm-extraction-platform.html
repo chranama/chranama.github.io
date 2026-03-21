@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Case Study | LLM Extraction Platform Runtime Controls</title>
+    <meta name="description" content="System-first case study for the LLM Extraction Platform, covering contract-driven APIs, runtime controls, async execution, Kubernetes proof, and traceable operational validation.">
+    <link rel="canonical" href="https://chranama.github.io/case-study-llm-extraction-platform.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Case Study: LLM Extraction Platform Runtime Controls">
+    <meta property="og:description" content="System-first walkthrough of contract-driven APIs, runtime controls, Kubernetes proof, async jobs, and traceable operations.">
+    <meta property="og:url" content="https://chranama.github.io/case-study-llm-extraction-platform.html">
+    <meta property="og:image" content="https://chranama.github.io/assets/og-extract-gate.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Case Study: LLM Extraction Platform Runtime Controls">
+    <meta name="twitter:description" content="System-first walkthrough of contract-driven APIs, runtime controls, and operational proof.">
+    <meta name="twitter:image" content="https://chranama.github.io/assets/og-extract-gate.svg">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <div class="container">
+        <p class="kicker">Flagship Case Study</p>
+        <h1>LLM Extraction Platform</h1>
+        <p class="title">Runtime Controls and Operational Proof</p>
+        <p>
+          This case study covers the LLM Extraction Platform as a backend AI system: contract-driven APIs,
+          runtime controls, async execution, deployment proof, and reviewer-fast operational evidence.
+        </p>
+        <p><a class="button" href="index.html">Back to Portfolio</a></p>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="section" aria-labelledby="overview-title">
+        <div class="container">
+          <h2 id="overview-title">System Overview</h2>
+          <div class="card">
+            <p>
+              <code>llm-extraction-platform</code> is a production-style LLM application service that exposes generate and
+              schema-constrained extract capabilities with explicit contracts, policy-aware runtime behavior, durable async jobs,
+              trace inspection, and a proof-oriented evidence system.
+            </p>
+            <p>
+              The flagship proof inside that broader system is extract capability gating: offline onboarding artifacts determine
+              whether extraction is enabled at runtime, and the result is verified through deterministic PASS/FAIL evidence artifacts.
+              But the case study is bigger than that single feature. It also shows Kubernetes deployability, separate-worker async
+              execution, and traceable request inspection across API and worker boundaries.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="why-title">
+        <div class="container">
+          <h2 id="why-title">Why This System Matters</h2>
+          <div class="card">
+            <p>
+              LLM APIs need more than a model call wrapped in an endpoint. To be credible as backend or platform work, they need
+              explicit contracts, runtime controls, operational inspection, and a way to prove that important behaviors are real.
+            </p>
+            <p>
+              This system is strongest as a backend/platform case study because it ties together product-facing API behavior,
+              offline-to-runtime control signals, deployment and execution modes, and proof artifacts that reduce ambiguity for both
+              operators and reviewers.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="lead-proof-title">
+        <div class="container">
+          <h2 id="lead-proof-title">Lead Proof: Extraction Capability Gating</h2>
+          <div class="card">
+            <p>
+              The lead proof surface shows how offline onboarding and evaluation artifacts set extraction capability in patched model
+              manifests, and how runtime policy checks that capability before serving extraction requests.
+            </p>
+            <p>The canonical signal is deterministic PASS/FAIL evidence output rather than a vague claim about model readiness.</p>
+            <ul>
+              <li>Run <code>python proof/validate_evidence_manifest.py</code>.</li>
+              <li>Inspect <code>proof/evidence_manifest.latest.json</code> to confirm that the PASS runtime is extract-capable while the FAIL runtime is capability-blocked.</li>
+            </ul>
+            <p class="inline-links">
+              <a href="https://github.com/chranama/llm-extraction-platform/blob/main/docs/02-project-demos.md">Project demos</a>
+              <span aria-hidden="true">|</span>
+              <a href="https://github.com/chranama/llm-extraction-platform/blob/main/policy/README.md">Policy docs</a>
+              <span aria-hidden="true">|</span>
+              <a href="https://github.com/chranama/llm-extraction-platform/blob/main/server/README.md">Server docs</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="proof-title">
+        <div class="container">
+          <h2 id="proof-title">Supporting System Proofs</h2>
+          <div class="card">
+            <p>
+              <strong>Kubernetes deployment proof.</strong> The same service has a canonical Kubernetes reviewer path.
+              This proof shows that the system is not limited to local-only execution: the local <code>kind</code> deployment passes smoke
+              checks and the production overlay renders cleanly, which makes the deployment story much more credible than a demo-only setup.
+            </p>
+            <p>
+              <strong>Async execution proof.</strong> The same system supports queued extraction through a separate worker process.
+              This proof matters because it shows the system can separate request submission from background execution while still exposing
+              durable job state; the canonical signal is <code>202</code> submission, separate worker execution, and a final
+              <code>succeeded</code> job result.
+            </p>
+            <p>
+              <strong>Trace inspection proof.</strong> The same system supports request-level inspection for both sync and async extraction.
+              This proof gives the system a strong observability story: a single trace id links submit, queue, worker claim, execution,
+              and final status across the API-to-worker boundary, so behavior stays inspectable even when work crosses processes.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="verification-title">
+        <div class="container">
+          <h2 id="verification-title">5-10 Minute Reviewer Path</h2>
+          <div class="card">
+            <ol>
+              <li>Open <a href="https://github.com/chranama/llm-extraction-platform#10-minute-reviewer-path">the reviewer path</a>.</li>
+              <li>Run <code>python proof/generate_canonical_manifest.py</code>.</li>
+              <li>Inspect PASS/FAIL gating artifacts in <a href="https://github.com/chranama/llm-extraction-platform/blob/main/proof/evidence_manifest.latest.json"><code>proof/evidence_manifest.latest.json</code></a>.</li>
+              <li>Inspect the Kubernetes proof in <a href="https://github.com/chranama/llm-extraction-platform/tree/main/proof/artifacts/phase5_k8s_kind"><code>proof/artifacts/phase5_k8s_kind/</code></a>.</li>
+              <li>Inspect the async extract proof in <a href="https://github.com/chranama/llm-extraction-platform/tree/main/proof/artifacts/phase6_extract_async"><code>proof/artifacts/phase6_extract_async/</code></a>.</li>
+              <li>Inspect the request-trace proof in <a href="https://github.com/chranama/llm-extraction-platform/tree/main/proof/artifacts/phase7_trace_inspection"><code>proof/artifacts/phase7_trace_inspection/</code></a>.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <p>Last updated: <span data-last-updated></span></p>
+        <p>
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">|</span>
+          <a href="recruiter-brief.html">Recruiter Brief</a>
+        </p>
+      </div>
+    </footer>
+      <script>
+      (function () {
+        var items = document.querySelectorAll('[data-last-updated]');
+        if (!items.length) return;
+        var modified = new Date(document.lastModified);
+        if (Number.isNaN(modified.getTime())) {
+          items.forEach(function (item) {
+            item.textContent = 'Unknown';
+          });
+          return;
+        }
+        var formatted = new Intl.DateTimeFormat('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        }).format(modified);
+        items.forEach(function (item) {
+          item.textContent = formatted;
+        });
+      })();
+    </script>
+  </body>
+</html>
