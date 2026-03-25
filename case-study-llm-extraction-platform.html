@@ -49,6 +49,14 @@
               But the case study is bigger than that single feature. It also shows Kubernetes deployability, separate-worker async
               execution, and traceable request inspection across API and worker boundaries.
             </p>
+            <p>
+              This backend is also the application side of a larger runtime story. It is intentionally designed to remain a valid
+              standalone inference service even when fronted by <code>inference-serving-gateway</code>, which owns edge/runtime
+              concerns such as admission, timeouts, readiness, and gateway-side observability.
+            </p>
+            <p class="inline-links">
+              <a href="case-study-inference-serving-gateway.html">See the companion gateway case study</a>
+            </p>
           </div>
         </div>
       </section>
@@ -142,6 +150,8 @@
           <a href="index.html">Home</a>
           <span aria-hidden="true">|</span>
           <a href="recruiter-brief.html">Recruiter Brief</a>
+          <span aria-hidden="true">|</span>
+          <a href="case-study-inference-serving-gateway.html">Gateway Case Study</a>
         </p>
       </div>
     </footer>

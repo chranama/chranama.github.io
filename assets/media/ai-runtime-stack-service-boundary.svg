@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Gateway/Backend Split</title>
+  <desc id="desc">Simplified architecture diagram showing a gateway layer in front of an inference backend, with a service boundary and a shared contract between them.</desc>
+
+  <defs>
+    <style>
+      .title { font: 700 34px -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; fill: #0f172a; }
+      .section { font: 700 22px -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; fill: #0f172a; }
+      .label { font: 700 18px -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; fill: #0f172a; }
+      .small { font: 600 15px -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; fill: #475569; }
+      .callout { font: 700 15px -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; fill: #2563eb; }
+    </style>
+
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse">
+      <path d="M0,0 L8,4 L0,8 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1600" height="900" fill="#ffffff"/>
+  <text x="58" y="82" class="title">Gateway/Backend Split</text>
+
+  <rect x="58" y="148" width="1484" height="566" rx="24" fill="#f8fafc" stroke="#cbd5e1"/>
+
+  <rect x="550" y="186" width="500" height="72" rx="18" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="800" y="217" text-anchor="middle" class="label">Shared Contract</text>
+  <text x="800" y="242" text-anchor="middle" class="small">request IDs, trace IDs, readiness, sync + async routes</text>
+
+  <text x="900" y="286" text-anchor="middle" class="callout">Service Boundary</text>
+
+  <rect x="250" y="320" width="530" height="330" rx="24" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="280" y="362" class="section">Gateway</text>
+
+  <rect x="290" y="412" width="210" height="92" rx="16" fill="#ffffff" stroke="#93c5fd"/>
+  <text x="395" y="466" text-anchor="middle" class="label">Admission</text>
+
+  <rect x="530" y="412" width="210" height="92" rx="16" fill="#ffffff" stroke="#93c5fd"/>
+  <text x="635" y="466" text-anchor="middle" class="label">Timeouts</text>
+
+  <rect x="290" y="530" width="210" height="92" rx="16" fill="#ffffff" stroke="#93c5fd"/>
+  <text x="395" y="584" text-anchor="middle" class="label">Readiness</text>
+
+  <rect x="530" y="530" width="210" height="92" rx="16" fill="#ffffff" stroke="#93c5fd"/>
+  <text x="635" y="572" text-anchor="middle" class="label">Tracing</text>
+  <text x="635" y="596" text-anchor="middle" class="label">&amp; Metrics</text>
+
+  <rect x="1020" y="320" width="470" height="330" rx="24" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/>
+  <text x="1050" y="362" class="section">Backend</text>
+
+  <rect x="1060" y="412" width="170" height="92" rx="16" fill="#ffffff" stroke="#fdba74"/>
+  <text x="1145" y="466" text-anchor="middle" class="label">Extract APIs</text>
+
+  <rect x="1260" y="412" width="170" height="92" rx="16" fill="#ffffff" stroke="#fdba74"/>
+  <text x="1345" y="466" text-anchor="middle" class="label">Async Jobs</text>
+
+  <rect x="1060" y="530" width="170" height="92" rx="16" fill="#ffffff" stroke="#fdba74"/>
+  <text x="1145" y="584" text-anchor="middle" class="label">Model Runtime</text>
+
+  <rect x="1260" y="530" width="170" height="92" rx="16" fill="#ffffff" stroke="#fdba74"/>
+  <text x="1345" y="584" text-anchor="middle" class="label">Policy Gates</text>
+
+  <line x1="900" y1="304" x2="900" y2="650" stroke="#64748b" stroke-width="3" stroke-dasharray="12 12"/>
+
+  <rect x="40" y="450" width="96" height="64" rx="16" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="88" y="490" text-anchor="middle" class="label">Client</text>
+
+  <path d="M136 482 L240 482" stroke="#2563eb" stroke-width="4" fill="none" marker-end="url(#arrow-blue)"/>
+  <path d="M780 482 L1020 482" stroke="#2563eb" stroke-width="5" fill="none" marker-end="url(#arrow-blue)"/>
+</svg>
