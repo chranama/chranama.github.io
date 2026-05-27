@@ -72,14 +72,6 @@ a:focus-visible,
   padding: var(--space-6) 0 var(--space-5);
 }
 
-.kicker {
-  margin: 0 0 var(--space-2);
-  color: var(--muted);
-  font-size: 0.86rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
 h1,
 h2,
 h3,
@@ -110,14 +102,9 @@ h3 {
 }
 
 .title {
-  margin-bottom: var(--space-1);
-  color: var(--muted);
-  font-weight: 600;
-}
-
-.credential {
   margin-bottom: var(--space-3);
   color: var(--muted);
+  font-weight: 600;
 }
 
 .lede {
