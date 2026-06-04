@@ -4,30 +4,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Christopher Anaya | Software Engineer</title>
-    <meta name="description" content="Christopher Anaya is an early-career software engineer building reliable AI systems and backend tools.">
+    <meta name="description" content="Christopher Anaya is an early-career software engineer building reliable AI systems, evaluation tooling, and backend workflows.">
     <link rel="canonical" href="https://chranama.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Christopher Anaya | Software Engineer">
-    <meta property="og:description" content="Reliable AI systems and backend tools, with public open-source projects for review.">
+    <meta property="og:description" content="Reliable AI systems, evaluation tooling, and backend workflows, with inspectable open-source projects.">
     <meta property="og:url" content="https://chranama.github.io/">
     <meta property="og:image" content="https://chranama.github.io/assets/og-home-v2.svg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Christopher Anaya | Software Engineer">
-    <meta name="twitter:description" content="Reliable AI systems and backend tools, with public open-source projects for review.">
+    <meta name="twitter:description" content="Reliable AI systems, evaluation tooling, and backend workflows, with inspectable open-source projects.">
     <meta name="twitter:image" content="https://chranama.github.io/assets/og-home-v2.svg">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="css/styles.css?v=single-page">
+    <link rel="stylesheet" href="css/styles.css?v=single-page-skills">
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
       <div class="container">
         <h1>Christopher Anaya</h1>
-        <p class="title">Early-career software engineer building reliable AI systems and backend tools.</p>
+        <p class="title">Early-career software engineer building reliable AI systems, evaluation tooling, and backend workflows.</p>
         <p class="lede">
-          I build AI-backed tools that make model-backed products easier to use, test, and operate.
-          My public open-source projects focus on structured data extraction, inference services,
-          model evaluation, and reproducible review.
+          I build public open-source projects that make AI-backed software easier to use, test,
+          and inspect.
         </p>
         <nav aria-label="Primary links">
           <ul class="link-row">
@@ -53,17 +52,17 @@
               <li>Runtime checks</li>
             </ul>
             <p>
-              Helps developers turn natural-language inputs into structured data with API contracts
-              and runtime checks around model outputs.
+              Open-source backend for turning natural-language inputs into structured data with
+              explicit API contracts, schema-constrained extraction, and runtime checks around
+              model outputs.
             </p>
             <p>
-              Includes generate/extract APIs, sync and async extraction workflows,
-              capability gates, and reproducible proof artifacts.
+              Includes generate and extract services, sync and async extraction workflows,
+              policy gates, Prometheus metrics, trace inspection, and reproducible runtime
+              artifacts.
             </p>
             <p class="inline-links">
               <a href="https://github.com/chranama/llm-extraction-platform">Repository</a>
-              <span aria-hidden="true">|</span>
-              <a href="https://github.com/chranama/llm-extraction-platform#10-minute-reviewer-path">Review guide</a>
             </p>
           </article>
 
@@ -75,17 +74,16 @@
               <li>Observability</li>
             </ul>
             <p>
-              Gives AI product APIs a controlled service boundary in front of upstream
+              Go gateway for placing a controlled service boundary in front of upstream
               inference backends.
             </p>
             <p>
-              Includes health/readiness checks, metrics, sync and async extraction routes,
-              job-status retrieval, request limits, timeouts, structured errors, and trace propagation.
+              Includes health and readiness checks, metrics, sync and async extraction forwarding,
+              job-status polling, request limits, timeouts, structured edge errors, and trace
+              propagation.
             </p>
             <p class="inline-links">
               <a href="https://github.com/chranama/inference-serving-gateway">Repository</a>
-              <span aria-hidden="true">|</span>
-              <a href="https://github.com/chranama/inference-serving-gateway#quick-start">Quick start</a>
             </p>
           </article>
 
@@ -97,19 +95,15 @@
               <li>Reproducible reports</li>
             </ul>
             <p>
-              Helps researchers compare biomedical QA model behavior across clean and
+              Biomedical QA evaluation workflow for comparing model behavior across clean and
               perturbed inputs.
             </p>
             <p>
               Includes fixed-seed robustness analysis, phenotype-conditioned aggregation,
-              integrity validation, and scripted report artifacts tied to MSc/CLEF BioASQ work.
+              saved experiment artifacts, evidence validation, and scripted report outputs.
             </p>
             <p class="inline-links">
               <a href="https://github.com/chranama/biollm-finetune">Repository</a>
-              <span aria-hidden="true">|</span>
-              <a href="https://github.com/chranama/biollm-finetune#5-minute-reviewer-path">Review guide</a>
-              <span aria-hidden="true">|</span>
-              <a href="masters_thesis.pdf">Thesis PDF</a>
             </p>
           </article>
 
@@ -121,19 +115,31 @@
               <li>ML features</li>
             </ul>
             <p>
-              Compares weather patterns across California and Portugal through a warehouse-first
-              data and ML platform.
+              Local data and machine learning pipeline for comparing historical weather patterns
+              across California and Portugal.
             </p>
             <p>
-              Includes a DuckDB warehouse, layered dbt transforms, Prefect orchestration,
-              tested anomaly features, persisted metrics, and dashboard-ready outputs.
+              Includes Open-Meteo ingestion, DuckDB warehouse models, layered dbt transforms,
+              Prefect orchestration, anomaly features, baseline model metrics, and dashboard-ready
+              outputs.
             </p>
             <p class="inline-links">
               <a href="https://github.com/chranama/california-portugal-climate">Repository</a>
-              <span aria-hidden="true">|</span>
-              <a href="https://github.com/chranama/california-portugal-climate#5-minute-reviewer-path">Review guide</a>
             </p>
           </article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="skills-title">
+        <div class="container">
+          <h2 id="skills-title">Skills</h2>
+          <ul class="skill-list">
+            <li>Python, Go, TypeScript/React, SQL/Postgres</li>
+            <li>FastAPI, REST APIs, async workflows, structured errors</li>
+            <li>Docker, Kubernetes, Redis, Linux, CI/CD</li>
+            <li>LLM evaluation, schema-constrained extraction, model behavior analysis</li>
+            <li>Prometheus/Grafana, trace inspection, reproducible runtime artifacts</li>
+          </ul>
         </div>
       </section>
 
@@ -141,9 +147,12 @@
         <div class="container">
           <h2 id="background-title">Academic Background</h2>
           <p>
-            MSc Data Science, University of Lisbon<br>
-            MSc Mathematical Research, University of Valencia<br>
-            BA Astronomy, University of Colorado Boulder
+            MSc in Data Science, University of Lisbon (Portugal), 2025
+            (<a href="masters_thesis.pdf">Thesis PDF</a>)
+            <br>
+            MSc in Mathematics, University of Valencia (Spain), 2016
+            <br>
+            BA in Astronomy, University of Colorado Boulder, 2013
           </p>
         </div>
       </section>
@@ -153,10 +162,21 @@
           <h2 id="contact-title">Contact</h2>
           <p class="inline-links">
             <a href="mailto:chris.anaya.ai@gmail.com">chris.anaya.ai@gmail.com</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="links-title">
+        <div class="container">
+          <h2 id="links-title">Links</h2>
+          <p class="inline-links">
+            <a href="https://chranama.github.io">Portfolio</a>
             <span aria-hidden="true">|</span>
-            <a href="https://www.linkedin.com/in/chris-anaya-ai/">linkedin.com/in/chris-anaya-ai</a>
+            <a href="resume.pdf">Resume</a>
             <span aria-hidden="true">|</span>
-            <a href="https://github.com/chranama">github.com/chranama</a>
+            <a href="https://github.com/chranama">GitHub</a>
+            <span aria-hidden="true">|</span>
+            <a href="https://www.linkedin.com/in/chris-anaya-ai/">LinkedIn</a>
           </p>
         </div>
       </section>

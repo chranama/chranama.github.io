@@ -30,7 +30,7 @@ The website is intentionally lightweight. Detailed proof surfaces live in the po
 
 1. Confirm `resume.pdf` is current.
 2. Confirm `masters_thesis.pdf` is current if linked.
-3. Confirm all repository and reviewer-path links in `index.html` resolve.
+3. Confirm all repository links in `index.html` resolve.
 4. Push to `main`.
 5. Verify live site at `https://chranama.github.io`.
 6. Confirm Actions workflow `site-checks` passes.
