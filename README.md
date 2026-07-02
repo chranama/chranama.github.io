@@ -21,16 +21,16 @@ Supporting PDFs from prior one-page briefs may remain in the repository, but the
 
 The website is intentionally lightweight. Detailed proof surfaces live in the portfolio repository READMEs:
 
+- [`MealCheck`](https://github.com/chranama/MealCheck)
 - [`llm-extraction-platform`](https://github.com/chranama/llm-extraction-platform)
 - [`inference-serving-gateway`](https://github.com/chranama/inference-serving-gateway)
 - [`biollm-finetune`](https://github.com/chranama/biollm-finetune)
-- [`california-portugal-climate`](https://github.com/chranama/california-portugal-climate)
 
 ## Launch Checklist
 
 1. Confirm `resume.pdf` is current.
 2. Confirm `masters_thesis.pdf` is current if linked.
-3. Confirm all repository links in `index.html` resolve.
+3. Confirm `https://mealcheck.dev` and all repository links in `index.html` resolve.
 4. Push to `main`.
 5. Verify live site at `https://chranama.github.io`.
 6. Confirm Actions workflow `site-checks` passes.

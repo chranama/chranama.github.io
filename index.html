@@ -4,29 +4,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Christopher Anaya | Software Engineer</title>
-    <meta name="description" content="Christopher Anaya is an early-career software engineer building reliable AI systems, evaluation tooling, and backend workflows.">
+    <meta name="description" content="Christopher Anaya is an early-career full-stack software engineer building AI products, backend workflows, and evaluation tooling.">
     <link rel="canonical" href="https://chranama.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Christopher Anaya | Software Engineer">
-    <meta property="og:description" content="Reliable AI systems, evaluation tooling, and backend workflows, with inspectable open-source projects.">
+    <meta property="og:description" content="AI products, backend workflows, and evaluation tooling, with inspectable open-source projects.">
     <meta property="og:url" content="https://chranama.github.io/">
     <meta property="og:image" content="https://chranama.github.io/assets/og-home-v2.svg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Christopher Anaya | Software Engineer">
-    <meta name="twitter:description" content="Reliable AI systems, evaluation tooling, and backend workflows, with inspectable open-source projects.">
+    <meta name="twitter:description" content="AI products, backend workflows, and evaluation tooling, with inspectable open-source projects.">
     <meta name="twitter:image" content="https://chranama.github.io/assets/og-home-v2.svg">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="css/styles.css?v=single-page-skills">
+    <link rel="stylesheet" href="css/styles.css?v=mealcheck-primary">
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
       <div class="container">
         <h1>Christopher Anaya</h1>
-        <p class="title">Early-career software engineer building reliable AI systems, evaluation tooling, and backend workflows.</p>
+        <p class="title">Early-career full-stack software engineer building AI products, backend workflows, and evaluation tooling.</p>
         <p class="lede">
-          I build public open-source projects that make AI-backed software easier to use, test,
-          and inspect.
+          I build public open-source systems where model behavior is bounded, testable,
+          and inspectable.
         </p>
         <nav aria-label="Primary links">
           <ul class="link-row">
@@ -44,6 +44,30 @@
         <div class="container">
           <h2 id="selected-work-title">Open Source Projects</h2>
 
+          <article class="project" aria-labelledby="project-mealcheck-title">
+            <h3 id="project-mealcheck-title">MealCheck</h3>
+            <ul class="tag-row" aria-label="Project focus">
+              <li>Full-stack AI product</li>
+              <li>Local-model workflow</li>
+              <li>Deterministic verification</li>
+            </ul>
+            <p>
+              Public AI verifier for ingredient-level meal plans, built with a React/Vite
+              frontend, Go API/worker backend, Postgres run state, filesystem artifacts,
+              Cloudflare Pages/Tunnel deployment, and private llama.cpp normalization.
+            </p>
+            <p>
+              The local model performs bounded semantic normalization while deterministic
+              code owns food resolution, guideline checks, recommendations, source inspection,
+              and final pass/warn/block decisions.
+            </p>
+            <p class="inline-links">
+              <a href="https://mealcheck.dev">Hosted product</a>
+              <span aria-hidden="true">|</span>
+              <a href="https://github.com/chranama/MealCheck">Repository</a>
+            </p>
+          </article>
+
           <article class="project" aria-labelledby="project-llm-extract-title">
             <h3 id="project-llm-extract-title">LLM Extraction Platform</h3>
             <ul class="tag-row" aria-label="Project focus">
@@ -52,14 +76,14 @@
               <li>Runtime checks</li>
             </ul>
             <p>
-              Open-source backend for turning natural-language inputs into structured data with
-              explicit API contracts, schema-constrained extraction, and runtime checks around
-              model outputs.
+              Backend service for turning natural-language inputs into structured data with
+              explicit API contracts, schema-constrained extraction, and policy-aware runtime
+              behavior.
             </p>
             <p>
-              Includes generate and extract services, sync and async extraction workflows,
-              policy gates, Prometheus metrics, trace inspection, and reproducible runtime
-              artifacts.
+              Includes sync and async extraction workflows, a separate worker process,
+              Kubernetes deployment artifacts, Prometheus-oriented metrics, trace inspection,
+              and canonical runtime artifacts.
             </p>
             <p class="inline-links">
               <a href="https://github.com/chranama/llm-extraction-platform">Repository</a>
@@ -106,27 +130,6 @@
               <a href="https://github.com/chranama/biollm-finetune">Repository</a>
             </p>
           </article>
-
-          <article class="project" aria-labelledby="project-climate-title">
-            <h3 id="project-climate-title">California-Portugal Climate Pipeline</h3>
-            <ul class="tag-row" aria-label="Project focus">
-              <li>Data platform</li>
-              <li>Analytics engineering</li>
-              <li>ML features</li>
-            </ul>
-            <p>
-              Local data and machine learning pipeline for comparing historical weather patterns
-              across California and Portugal.
-            </p>
-            <p>
-              Includes Open-Meteo ingestion, DuckDB warehouse models, layered dbt transforms,
-              Prefect orchestration, anomaly features, baseline model metrics, and dashboard-ready
-              outputs.
-            </p>
-            <p class="inline-links">
-              <a href="https://github.com/chranama/california-portugal-climate">Repository</a>
-            </p>
-          </article>
         </div>
       </section>
 
@@ -134,10 +137,10 @@
         <div class="container">
           <h2 id="skills-title">Skills</h2>
           <ul class="skill-list">
-            <li>Python, Go, TypeScript/React, SQL/Postgres</li>
-            <li>FastAPI, REST APIs, async workflows, structured errors</li>
-            <li>Docker, Kubernetes, Redis, Linux, CI/CD</li>
-            <li>LLM evaluation, schema-constrained extraction, model behavior analysis</li>
+            <li>Go, TypeScript/React, Python, SQL/Postgres</li>
+            <li>REST APIs, async workers, JSON Schema, structured errors</li>
+            <li>llama.cpp, local-model workflows, LLM evaluation, deterministic verification</li>
+            <li>Docker, Kubernetes, Cloudflare, Redis, Linux, CI/CD</li>
             <li>Prometheus/Grafana, trace inspection, reproducible runtime artifacts</li>
           </ul>
         </div>
