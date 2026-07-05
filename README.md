@@ -5,13 +5,16 @@ Single-page static GitHub Pages portfolio site.
 ## Route
 
 - `/` -> minimalist portfolio hub
+- `/resume.html` -> LinkedIn-previewable resume wrapper with a direct PDF link
 
 ## Local Files
 
 - `index.html`
+- `resume.html`
 - `css/styles.css`
 - `assets/favicon.svg`
 - `assets/og-home-v2.svg`
+- `assets/og-v3-resume.png`
 - `resume.pdf`
 - `masters_thesis.pdf`
 
@@ -35,6 +38,8 @@ The website is intentionally lightweight. Detailed proof surfaces live in the po
 5. Verify live site at `https://chranama.github.io`.
 6. Confirm Actions workflow `site-checks` passes.
 7. Refresh link card cache in LinkedIn Post Inspector after updates.
+8. Use `https://chranama.github.io/resume.html` for LinkedIn Featured instead
+   of the raw `resume.pdf` URL when a stable preview image is needed.
 
 ## Manual Verification Checklist
 
